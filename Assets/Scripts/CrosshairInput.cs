@@ -11,11 +11,12 @@ public class CrosshairInput : MonoBehaviour
     public static event Action onPressFire1;
     public static event Action onReleaseFire1;
     public static event Action<string> onSwapControls;
+    
     public static Vector3 CrosshairPosition = Vector3.zero;
+    public static InputType SelectedType;
 
     [SerializeField] private InputType _inputType = InputType.Mouse;
-    public static InputType SelectedType;
-    [SerializeField] private float _speed;
+    [SerializeField] private float _speed = 30f;
     
     private int _swapPressCount = 0;
     private float _swapTimer = 0f;
