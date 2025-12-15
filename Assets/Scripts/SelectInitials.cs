@@ -79,8 +79,6 @@ public class SelectInitials : MonoBehaviour
         direction.x = Input.GetAxis("Horizontal");
         direction.y = Input.GetAxis("Vertical");
 
-        Debug.Log($"direction x:{direction.x} -- y:{direction.y}");
-
         //right
         if (lastDirection.x > inputThreshold && direction.x < inputThreshold) OnPressNext();
         if (lastDirection.x < -inputThreshold && direction.x > -inputThreshold) OnPressPrev();
@@ -88,17 +86,12 @@ public class SelectInitials : MonoBehaviour
         if (lastDirection.y < -inputThreshold && direction.y > -inputThreshold) OnPressDown();
 
         if (Input.GetButtonUp("Fire1")&& _submissionTimer > submissionDelay) OnPressDone();
-
-
-        
-
-        
+          
 
         
         _submissionTimer += Time.deltaTime;
         float cd = _countDown - _submissionTimer;
 
-        Debug.Log($"cd {cd}");
         if (cd > 0) { 
             fireWhenDone.text = $"{Mathf.Round(cd)}"; } 
         else {
@@ -172,10 +165,7 @@ public class SelectInitials : MonoBehaviour
     private void UpdateUI()
     {
        _initialField.text = _initials;
-    }
-    private void InitialDown() { 
-    
-    }
+    } 
     private void NextInitial() {
         if (_initialIndex < _maxInitials - 1) _initialIndex++;
     }

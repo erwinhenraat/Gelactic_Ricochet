@@ -10,11 +10,11 @@ public class Shoot : MonoBehaviour
 
 
     [SerializeField] private GameObject prefab;
-    [SerializeField] private float forceBuild = 20f;
+    [SerializeField] private float forcePerSecond = 20f;
     [SerializeField] private List<Color> beamColors = new List<Color>();
     [SerializeField] private float lineStartWidth = 0.1f;
     [SerializeField] private float lineEndWidth = 0.07f;
-    [SerializeField] private float maximumHoldTime = 5f;
+    [SerializeField] private float maximumHoldSeconds = 5f;
 
     private float _pressTimer = 0f;
     private float _launchForce = 0f;
@@ -25,12 +25,7 @@ public class Shoot : MonoBehaviour
     private bool _endPress = false;
 
     private LineRenderer lineRenderer;
-    private ParticleSystem particles;
-
-    /*
-    private bool _fire1Down = false;
-    private bool _fire1Release = false;
-    */
+    private ParticleSystem particles;  
 
     private void Start()
     {
@@ -65,8 +60,8 @@ public class Shoot : MonoBehaviour
     {
         Lives.onDepleted -= DisableShot;
         Lives.onReload -= ReloadShot; 
-        CrosshairInput.onPressFire1 += HandlePressFire;
-        CrosshairInput.onReleaseFire1 += HandleReleaseFire;
+        CrosshairInput.onPressFire1 -= HandlePressFire;
+        CrosshairInput.onReleaseFire1 -= HandleReleaseFire;
     }
     void Update()
     {
@@ -75,11 +70,7 @@ public class Shoot : MonoBehaviour
             DrawForceLine();
         }
     }
-    void HandleShot() {
-
-
-        //gebruik _startPress en _endPress ipv Input.GetMouseButtonDown/Up(0)
-
+    void HandleShot() { 
         if (_startPress)
         { //als de knop ingedrukt word
             _pressTimer = 0; //reset de timer
@@ -90,7 +81,7 @@ public class Shoot : MonoBehaviour
         }
         if (_endPress)
         { //als je de knop loslaat
-            _launchForce = _pressTimer * forceBuild; //bepaal de kracht via de timer
+            _launchForce = _pressTimer * forcePerSecond; //bepaal de kracht via de timer
             GameObject ball = Instantiate(prefab, transform.parent); //maak een bal
             ball.transform.rotation = transform.rotation;   //draai de bal in de richting van de pijl
             ball.GetComponent<Rigidbody2D>().AddForce(ball.transform.right * _launchForce, ForceMode2D.Impulse); //geef kracht mee in de juiste richting
@@ -103,7 +94,7 @@ public class Shoot : MonoBehaviour
             particles.Stop();
 
         }
-        if(_pressTimer < maximumHoldTime) _pressTimer += Time.deltaTime; //houd de teller bij
+        if(_pressTimer < maximumHoldSeconds) _pressTimer += Time.deltaTime; //houd de teller bij
 
 
         _startPress = false;
