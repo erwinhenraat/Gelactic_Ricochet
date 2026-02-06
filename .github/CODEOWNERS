@@ -1,0 +1,6 @@
+# CODEOWNERS file
+# This file defines who is required to review and approve pull requests
+# before they can be merged into protected branches.
+
+# All changes require approval from the repository owner
+* @erwinhenraat
