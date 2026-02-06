@@ -1,5 +1,8 @@
 "# Gelactic_Ricochet
 
+> **📢 Voor de repository eigenaar:** Zie [Setup Samenvatting](.github/SETUP_SUMMARY.md) voor acties die je moet uitvoeren.  
+> **📢 For the repository owner:** See [Setup Summary](.github/SETUP_SUMMARY.md) for actions you need to take.
+
 ## Contributing / Bijdragen
 
 This repository uses branch protection rules for the `development` branch. All contributors must work via pull requests.
