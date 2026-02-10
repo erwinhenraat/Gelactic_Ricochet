@@ -2,7 +2,7 @@
 
 ![gameplay](./Assets/2d/readme_content/screen.png)
 
-A work in progress game development project. hoi
+A work in progress game development project. hoi lol
 
 Students at Mediacollege Amsterdam can contribute in Module M7.
 
