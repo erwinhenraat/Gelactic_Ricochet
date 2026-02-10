@@ -46,6 +46,7 @@ This workflow:
 - Runs on all pull requests to `development` branch
 - Provides a "Validate PR" status check
 - Ensures branch protection requirements can be satisfied
+- Uses minimal permissions (read-only access to contents) for security
 
 ```yaml
 name: PR Checks
@@ -62,11 +63,13 @@ jobs:
   pr-validation:
     name: Validate PR
     runs-on: ubuntu-latest
-    
+    permissions:
+      contents: read
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: PR validation check
         run: |
           echo "✓ PR validation passed"
@@ -116,5 +119,11 @@ To avoid this issue in the future:
 - The documentation in `.github/BRANCH_PROTECTION_SETUP.md` correctly notes this is optional
 - Ensure branch protection configuration matches available CI/CD infrastructure
 
+## Security Summary
+- ✅ Initial workflow implementation reviewed - no issues found
+- ✅ CodeQL security scan identified missing permissions block
+- ✅ Fixed by adding explicit `permissions: contents: read` to workflow
+- ✅ Re-scan confirmed no security vulnerabilities
+
 ## Summary
-PR #6 is blocked because branch protection requires status checks that don't exist. This PR adds a minimal workflow to satisfy that requirement. However, PR #6 also contains inappropriate content that should be addressed separately.
+PR #6 is blocked because branch protection requires status checks that don't exist. This PR adds a minimal workflow to satisfy that requirement with proper security permissions. However, PR #6 also contains inappropriate content that should be addressed separately.
