@@ -3,10 +3,28 @@ using System.Collections.Generic;
 
 public class PlaySounds : MonoBehaviour
 {
-    private AudioSource[] sources = new AudioSource[4];
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public enum SoundType { Bumper, Combo, GameOver, ExtraBall, BallLost, Loadup }
+
+    private Dictionary<SoundType, AudioSource> soundSources = new Dictionary<SoundType, AudioSource>();
+
     void Start()
     {
+        // Initialize all audio sources from components
+        AudioSource[] sources = GetComponents<AudioSource>();
+
+        if (sources.Length < 6)
+        {
+            Debug.LogError("PlaySounds requires 6 AudioSource components!");
+            return;
+        }
+
+        soundSources[SoundType.Bumper] = sources[0];
+        soundSources[SoundType.Combo] = sources[1];
+        soundSources[SoundType.GameOver] = sources[2];
+        soundSources[SoundType.ExtraBall] = sources[3];
+        soundSources[SoundType.BallLost] = sources[4];
+        soundSources[SoundType.Loadup] = sources[5];
+
         HitBumper.onHitBumper += PlayBumper;
         Combo.onComboAchieved += PlayCombo;
         Lives.onGameOver += PlayGameOver;
@@ -14,9 +32,8 @@ public class PlaySounds : MonoBehaviour
         PlayArea.onBallLost += PlayBallLost;
         Shoot.onPress += PlayLoadup;
         Shoot.onRelease += StopLoadup;
-        sources = GetComponents<AudioSource>();
-
     }
+
     private void OnDisable()
     {
         HitBumper.onHitBumper -= PlayBumper;
@@ -27,35 +44,41 @@ public class PlaySounds : MonoBehaviour
         Shoot.onPress -= PlayLoadup;
         Shoot.onRelease -= StopLoadup;
     }
+
     private void PlayBumper(Transform _, int __)
     {
-        sources[0].pitch = Random.Range(0.5f, 1.5f);
-        sources[0].Play();
-
+        soundSources[SoundType.Bumper].pitch = Random.Range(0.5f, 1.5f);
+        soundSources[SoundType.Bumper].Play();
     }
+
     private void PlayCombo(int value, string _)
     {
-        sources[1].pitch = 1 + value / 10;
-        sources[1].Play();
+        soundSources[SoundType.Combo].pitch = 1 + value / 10;
+        soundSources[SoundType.Combo].Play();
     }
+
     private void PlayGameOver(string _)
     {
-        sources[2].Play();
+        soundSources[SoundType.GameOver].Play();
     }
+
     private void PlayExtraBall(string _)
     {
-        sources[3].Play();
+        soundSources[SoundType.ExtraBall].Play();
     }
+
     private void PlayBallLost()
     {
-        sources[4].Play();
+        soundSources[SoundType.BallLost].Play();
     }
+
     private void PlayLoadup()
     {
-        sources[5].Play();
+        soundSources[SoundType.Loadup].Play();
     }
+
     private void StopLoadup()
     {
-        sources[5].Stop();
+        soundSources[SoundType.Loadup].Stop();
     }
 }

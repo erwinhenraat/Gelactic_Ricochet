@@ -84,11 +84,11 @@ public class Score : MonoBehaviour
     private void CheckForHighScore(string _)
     {
 
-        Debug.Log($"checking highscore score:{value} -- high{highscore}");
+        //Debug.Log($"checking highscore score:{value} -- high{highscore}");
         //check only on game over!
         if (value > highscore)
         {
-            Debug.Log("highscore found");
+            //Debug.Log("highscore found");
             highscore = value;
             
             onSaveNewHighscore?.Invoke(highscore);
@@ -98,7 +98,7 @@ public class Score : MonoBehaviour
     }
     private void SaveHighScore(string holder) {
         //save highscore
-        Debug.Log("saving highscore");
+        //Debug.Log("saving highscore");
         PlayerPrefs.SetInt("highscore", highscore);
         PlayerPrefs.SetString("holder", holder);
 

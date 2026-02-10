@@ -6600,6 +6600,9 @@ MonoBehaviour:
   multiplierField: {fileID: 912939736}
   restartField: {fileID: 1491088403}
   titleField: {fileID: 1613950226}
+  fadeIntensity: 0.25
+  fadeToColorTime: 0.3
+  fadeToBlackTime: 0.4
   loopInterval: 0.38
 --- !u!1001 &1540993966
 PrefabInstance:

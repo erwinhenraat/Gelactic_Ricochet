@@ -16,17 +16,22 @@ public class ComboMood : MonoBehaviour
     [SerializeField] private TMP_Text restartField;
     [SerializeField] private TMP_Text titleField;
 
+    [SerializeField] private float fadeIntensity = 0.25f;
+    [SerializeField] private float fadeToColorTime = 0.3f;
+    [SerializeField] private float fadeToBlackTime = 0.4f;
+    [SerializeField] private float loopInterval = 0.8f;
 
     private VolumeProfile _volumeProfile;
- 
-   
+    private int _tagColorIterator = 0;
+    private bool _loops = false;
+
+
     private void Start() {         
 
         Combo.onComboAchieved += ChangeMood;
         Combo.onComboLost += ChangeMood;
         Lives.onGameOver += LoopMoods;
         Restart.onRestart += StopMoodLoop;
-
 
         _volumeProfile = GetComponent<Volume>().profile;
         
@@ -42,36 +47,35 @@ public class ComboMood : MonoBehaviour
     private void ChangeMood(int _, string tag) {
         Vignette vignette;
         if (!_volumeProfile.TryGet(out vignette)) throw new System.NullReferenceException(nameof(vignette));
-
+       
         
         bool tagColorExists = false;
         foreach (TagColor tc in tagColors) {          
             if (tag == tc.tag) {
-                StartCoroutine(FadeIn(vignette, tc.color, 0.25f, 0.3f));
+               
+                StartCoroutine(FadeIn(vignette, tc.color, fadeIntensity, fadeToColorTime));
                 tagColorExists = true;
                 if (multiplierField != null) multiplierField.color = new Color32(tc.color.r, tc.color.g, tc.color.b, 255);
                 //if (restartField != null) restartField.color = new Color32(tc.color.r, tc.color.g, tc.color.b, 255);
                 if (titleField != null) titleField.color = new Color32(tc.color.r, tc.color.g, tc.color.b, 255);
             }
-        }
-        
-        if (!tagColorExists && vignette.color.value != Color.black) { 
-            StartCoroutine(FadeIn(vignette, Color.black, 0.25f, 0.4f));
+        }        
+        if (!tagColorExists && vignette.color.value != Color.black) {
+          
+            StartCoroutine(FadeIn(vignette, Color.black, fadeIntensity, fadeToBlackTime));
             if (multiplierField != null) multiplierField.color = new Color32(255, 255, 255, 255);
             //if (restartField != null) multiplierField.color = new Color32(255, 255, 255, 255);
             if (titleField != null) titleField.color = new Color32(255, 255, 255, 255);
-
         } 
        
         
     }
 
-    private int _tagColorIterator = 0;
-    private bool _loops = false;
-    [SerializeField] private float loopInterval = 0.8f;
+
+    
     private void LoopMoods(string _) {
         _loops = true;
-        StartCoroutine("Loop");
+        StartCoroutine(Loop());
     }
     private void StopMoodLoop(string _) {
         _loops = false;
