@@ -39,30 +39,5 @@ public class Combo : MonoBehaviour
                 tagSequence.Add(transform.tag);
             }
         }
-
-
-
-
-        /*
-        if (transform.gameObject.CompareTag("Combo"))
-        {
-            tagSequence.Add(transform.gameObject.tag);
-            int comboLevel = tagSequence.Count;
-            if (comboLevel > 1)
-            {
-                onComboAchieved?.Invoke(comboLevel);                
-            }
-        }
-        else {            
-           ResetCombo();
-        }
-
-        */
     }
-
-   
-
-
-
-
 }

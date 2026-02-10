@@ -5,7 +5,7 @@ public class ScorePop : MonoBehaviour
 {
     private float maxScale;
     private float startScale;
-    private float currrentScale;
+    private float currentScale;
     private float scaleDiff;
     private TMP_Text textfield;
     [SerializeField] float seconds;
@@ -36,12 +36,12 @@ public class ScorePop : MonoBehaviour
         {
             maxScale = 4f;
             startScale = 1f;
-            currrentScale = startScale;
+            currentScale = startScale;
             scaleDiff = maxScale - startScale;
             Vector2 screenPoint = Camera.main.WorldToScreenPoint(location);
             textfield.transform.position = screenPoint;
             textfield.text = string.Empty + value;
-            StartCoroutine("Animate");
+            StartCoroutine(Animate());
         }
 
     }
@@ -50,22 +50,22 @@ public class ScorePop : MonoBehaviour
 
         maxScale = 8f;
         startScale = 1f;
-        currrentScale = startScale;
+        currentScale = startScale;
         scaleDiff = maxScale - startScale;
         Vector2 screenPoint = Camera.main.WorldToScreenPoint(Vector3.zero);
         textfield.transform.position = screenPoint;
         textfield.text = string.Empty + message;
-        StartCoroutine("Animate");
+        StartCoroutine(Animate());
 
         
     }
 
     private IEnumerator Animate() {
         
-        while (currrentScale < maxScale) 
+        while (currentScale < maxScale) 
         {    
-            currrentScale += scaleDiff / (seconds / Time.deltaTime);          
-            textfield.transform.localScale = Vector2.one * currrentScale;                                   
+            currentScale += scaleDiff / (seconds / Time.deltaTime);          
+            textfield.transform.localScale = Vector2.one * currentScale;                                   
             yield return new WaitForEndOfFrame();
         }
         textfield.text = string.Empty;
