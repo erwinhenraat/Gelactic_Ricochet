@@ -12,11 +12,11 @@ jobs:
   pr-validation:
     name: Validate PR
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: PR validation check
         run: |
           echo "✓ PR validation passed"
