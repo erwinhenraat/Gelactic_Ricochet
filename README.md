@@ -15,7 +15,7 @@ To contribute share your github username.
 
 This repository uses branch protection rules for the `development` branch. All contributors must work via pull requests.
 
-Deze repository gebruikt branch protection regels voor de `development` branch. Alle bijdragen moeten via pull requests verlopen.
+Deze repository gebruikt branch protection regels voor de `development` branch. Alle bijdragen moeten via pull requests verlopen. yoyoyoyoyoyoyoyoyoyo
 
 ### Setup Instructions for Repository Owner / Installatie Instructies voor Repository Eigenaar
 
