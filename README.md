@@ -1,4 +1,12 @@
-"# Gelactic_Ricochet
+# Gelactic Ricochet
+
+![gameplay](./Assets/2d/readme_content/screen.png)
+
+A work in progress game development project.
+
+Students at Mediacollege Amsterdam can contribute in Module M7.
+
+To contribute share your github username.
 
 > **📢 Voor de repository eigenaar:** Zie [Setup Samenvatting](.github/SETUP_SUMMARY.md) voor acties die je moet uitvoeren.  
 > **📢 For the repository owner:** See [Setup Summary](.github/SETUP_SUMMARY.md) for actions you need to take.
@@ -23,4 +31,4 @@ Deze repository gebruikt branch protection regels voor de `development` branch. 
 5. Wait for approval / Wacht op goedkeuring
 
 **Note**: Direct pushes to `development` are not allowed.  
-**Let op**: Directe pushes naar `development` zijn niet toegestaan." 
+**Let op**: Directe pushes naar `development` zijn niet toegestaan."
