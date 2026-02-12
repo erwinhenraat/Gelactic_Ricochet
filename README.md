@@ -1,4 +1,4 @@
-# Gelactic Ricochet
+# Galactic Ricochet
 
 ![gameplay](./Assets/2d/readme_content/screen.png)
 
