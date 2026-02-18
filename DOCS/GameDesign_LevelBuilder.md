@@ -1,32 +1,28 @@
-# Game Design Document — [Feature Naam]
-
-> **Instructie:** Kopieer dit bestand en hernoem het naar `GameDesign_[FeatureNaam].md`.
-> Vul alle secties zo volledig mogelijk in voordat je begint met ontwikkelen.
-
+# Game Design Document — Level Builder
 ---
 
 ## 1. Overzicht
 
 | Veld             | Invullen                                      |
 | ---------------- | --------------------------------------------- |
-| **Feature Naam** | _Korte naam van de feature_                   |
-| **Auteur**       | _Naam van de ontwerper_                       |
-| **Datum**        | _dd-mm-jjjj_                                  |
+| **Feature Naam** | _Level builder_                               |
+| **Auteur**       | _Penny de boer & Marcos vinicius Martins Carvalho_                       |
+| **Datum**        | _18-2-2026_                                   |
 | **Versie**       | _1.0_                                         |
-| **Branch**       | `Feature/[FeatureNaam]`                       |
-| **Status**       | 📝 Concept / 🔨 In ontwikkeling / ✅ Afgerond |
+| **Branch**       | `Feature/LevelBuilder`                        |
+| **Status**       | **📝 Concept** / ~~🔨 In ontwikkeling~~ / ~~✅ Afgerond~~|
 
 ---
 
 ## 2. User Story
 
-> Als **[type speler]** wil ik **[actie/mogelijkheid]** zodat **[gewenst resultaat / gevoel / doel]**.
+> Als **player** wil ik **[een level builder]** zodat **[ik vrijheid heb om eigen levels te maken en die te spelen]**.
 
 ---
 
 ## 3. Beschrijving
 
-_Geef een uitgebreide beschrijving van de feature. Wat doet het? Hoe past het binnen Galactic Ricochet? Waarom maakt het het spel beter?_
+_Met deze feature kan je levels bouwen en je ervaring meer uniek maken, Je maakt een level en het slaat op in de backend zodat je die later terug kan vinden bij de levels_
 
 ---
 
@@ -34,19 +30,18 @@ _Geef een uitgebreide beschrijving van de feature. Wat doet het? Hoe past het bi
 
 ### 4.1 Kernmechanisme
 
-_Beschrijf hoe de speler met deze feature interacteert. Welke input is nodig? Wat is het directe resultaat?_
+_De speler experimenteerd met levels bouwen en kan ze ook spelen_
 
 ### 4.2 Relatie met bestaande systemen
 
-_Geef aan welke bestaande systemen worden beïnvloed of aangevuld (bijv. Score, Combo, Lives, Multiplier, Input). Verwijs waar nodig naar het [Technisch Design](./TechnicalDesign.md)._
 
 | Bestaand Systeem   | Relatie / Impact               |
 | ------------------ | ------------------------------ |
-| Score              | _bijv. verhoogt score met X_   |
-| Combo / Multiplier | _bijv. reset combo bij missen_ |
-| Lives              | _bijv. geen invloed_           |
-| Input              | _bijv. extra knop nodig_       |
-| _Ander systeem_    | _…_                            |
+| Score              | _geen relatie_                 |
+| Combo / Multiplier | _geen relatie_                 |
+| Lives              | _geen relatie_                 |
+| Input              | _Je kunt eigen levels maken met een apart input systeem_                 |
+| Level saving    | _Je kan de levels opslaan en later weer spelen_                            |
 
 ### 4.3 Game Feel
 
@@ -54,11 +49,11 @@ _Welke feedback krijgt de speler? Denk aan: screenshake, geluid, visuele effecte
 
 | Feedback Type | Beschrijving                       |
 | ------------- | ---------------------------------- |
-| Visueel       | _bijv. particle effect bij impact_ |
-| Audio         | _bijv. power-up geluid_            |
-| Screenshake   | _bijv. korte shake bij activatie_  |
-| UI            | _bijv. icoon verschijnt in HUD_    |
-| Animatie      | _bijv. idle → active state_        |
+| Visueel       | _Overlay die je een "Builder" gevoel geeft_ |
+| Audio         | _geluiden bij het plaatsen_            |
+| Screenshake   | _geen_  |
+| UI            | _een lijst met alle bumpers die je kan plaatsen en een knoppen waarbij je het kan opslaan/spelen_    |
+| Animatie      | _builder overlay heeft miniscule animatie_        |
 
 ---
 
@@ -68,9 +63,7 @@ _Definieer de concrete spelregels en instelbare waarden voor deze feature._
 
 | Parameter            | Waarde  | Beschrijving                    |
 | -------------------- | ------- | ------------------------------- |
-| _bijv. cooldown_     | _2 sec_ | _Tijd voordat het opnieuw kan_  |
-| _bijv. puntenwaarde_ | _500_   | _Punten per activatie_          |
-| _bijv. duur_         | _5 sec_ | _Hoe lang het effect actief is_ |
+| _Hoeveelheid bumpers_     | _gebaseerd op score? of gedefineerd nummer_ | _zodat je niet 1 miljoen bumpers tegenlijk hebt_  |
 
 ---
 
@@ -85,7 +78,7 @@ _Voeg schetsen, wireframes, of referentiebeelden toe. Beschrijf de gewenste look
 
 ### Placeholder Art Beschrijving
 
-_Beschrijf welke placeholder art nodig is om de feature te ontwikkelen en te testen._
+_Borders van bumpers_
 
 ---
 
@@ -95,8 +88,8 @@ _Welke geluiden zijn nodig? Beschrijf per geluid het gewenste karakter._
 
 | Geluid               | Beschrijving / Karakter            | Placeholder  |
 | -------------------- | ---------------------------------- | ------------ |
-| _bijv. activate SFX_ | _Korte, punchy synth hit_          | ☐ Ja / ☐ Nee |
-| _bijv. loop SFX_     | _Zacht ambient hum tijdens actief_ | ☐ Ja / ☐ Nee |
+| _Placing van bumpers sfx_ | _bloop_          | ☐ Ja / [x] Nee |
+| _evt. "builder" muziek_     | _???_ | ☐ Ja / [x] Nee |
 
 ---
 
@@ -104,20 +97,19 @@ _Welke geluiden zijn nodig? Beschrijf per geluid het gewenste karakter._
 
 ### 8.1 Architectuurlaag
 
-_In welke laag van de architectuur past deze feature? (Input & Control / Interaction / Game Logic / Feedback)_
 
 ```
 ┌─────────────────────────────────────┐
-│   Feedback Layer                    │  ☐
+│   Feedback Layer                    │  [x]
 │   (UI, Visuals, Sound)              │
 ├─────────────────────────────────────┤
 │   Game Logic Layer                  │  ☐
 │   (Scoring, Lives, Combos)          │
 ├─────────────────────────────────────┤
-│   Interaction Layer                 │  ☐
+│   Interaction Layer                 │  [x]
 │   (Bumpers, Ball Physics)           │
 ├─────────────────────────────────────┤
-│   Input & Control Layer             │  ☐
+│   Input & Control Layer             │  [x]
 │   (Crosshair, Aim, Shoot)           │
 └─────────────────────────────────────┘
 ```
@@ -128,44 +120,42 @@ _Welke nieuwe events worden aangemaakt? Op welke bestaande events wordt geabonne
 
 | Event                        | Richting        | Beschrijving                  |
 | ---------------------------- | --------------- | ----------------------------- |
-| _bijv. `onPowerUpCollected`_ | Publish (nieuw) | _Fired bij oppakken power-up_ |
-| _bijv. `onHitBumper`_        | Subscribe       | _Luistert naar bumper hits_   |
+| _`onBumperPlaced`_ | Publish (nieuw) | _Fired bij bumper geplaatst_ |
+| _`onSaved`_ | Publish (nieuw) | _Fired bij save button geplaatst_ |
 
 ### 8.3 Benodigde Scripts / Componenten
 
 | Script / Component   | Verantwoordelijkheid                   |
 | -------------------- | -------------------------------------- |
-| _bijv. PowerUp.cs_   | _Detectie collision, activeren effect_ |
-| _bijv. PowerUpUI.cs_ | _Tonen van actief power-up icoon_      |
+| _DragAndDropSystem.cs_   | _zorgen dat je bumpers kan plaatsen_ |
+| _PlaceBumpers.cs_   | _bumpers plaatsen op de toegewijsde plekken_ |
+| _BuilderUI.cs_ | _de interacties van UI coderen_      |
+| _SaveLayout.cs_ | _map data sturen naar json file_      |
+| _SavedMap.json_ | _map data opslaan_      |
 
 ### 8.4 Uitschakelbaar
 
-_Beschrijf hoe deze feature uitgeschakeld kan worden zonder dat de rest van het spel breekt (conform de [Definition of Done](./DefinitionOfDone.md)). Welk GameObject moet gedeactiveerd worden?_
+_De scene en knop naar scene kunnen uit de delen in scene kunnen uit maar dan kan je geen level meer bouwen_
 
 ---
 
 ## 9. Todo Lijst
 
-_Maak een concrete checklist van alle taken die nodig zijn om deze feature te implementeren._
 
 - [ ] Game design document invullen en reviewen
 - [ ] Placeholder art maken / verzamelen
-- [ ] Placeholder audio maken / verzamelen
 - [ ] Script(s) aanmaken en implementeren
-- [ ] Events koppelen aan bestaande systemen
 - [ ] UI elementen toevoegen
 - [ ] Feature testen op bugs
 - [ ] Usertest uitvoeren (min. 3 spelers)
-- [ ] Usertest documentatie schrijven (`Usertest_[FeatureNaam].md`)
+- [ ] Usertest documentatie schrijven (`Usertest_LevelBuilder.md`)
 - [ ] Technisch design document updaten
 - [ ] Code review / pull request aanmaken
-- [ ] _Voeg extra taken toe indien nodig_
 
 ---
 
 ## 10. Acceptatiecriteria
 
-_Wanneer is deze feature "af"? Verwijs ook naar de [Definition of Done](./DefinitionOfDone.md)._
 
 - [ ] De user story is volledig geïmplementeerd
 - [ ] Alle parameters zijn instelbaar via de Unity Inspector
