@@ -68,13 +68,10 @@ _Definieer de concrete spelregels en instelbare waarden voor deze feature._
 ---
 
 ## 6. Visueel Ontwerp
-
-_Voeg schetsen, wireframes, of referentiebeelden toe. Beschrijf de gewenste look & feel._
-
 ### Schetsen / Referenties
 
-> _Plaats hier afbeeldingen of links naar referentiemateriaal._
-> `![beschrijving](pad/naar/afbeelding.png)`
+> ![algemene layout van de scene](LevelBuilderImages/designSketch.png)
+![andere inspiratie](LevelBuilderImages/MarioMaker.jpg)
 
 ### Placeholder Art Beschrijving
 
@@ -89,6 +86,7 @@ _Welke geluiden zijn nodig? Beschrijf per geluid het gewenste karakter._
 | Geluid               | Beschrijving / Karakter            | Placeholder  |
 | -------------------- | ---------------------------------- | ------------ |
 | _Placing van bumpers sfx_ | _bloop_          | ☐ Ja / [x] Nee |
+| _Fout placing van bumpers sfx_ | _beep_          | ☐ Ja / [x] Nee |
 | _evt. "builder" muziek_     | _???_ | ☐ Ja / [x] Nee |
 
 ---
@@ -121,6 +119,7 @@ _Welke nieuwe events worden aangemaakt? Op welke bestaande events wordt geabonne
 | Event                        | Richting        | Beschrijving                  |
 | ---------------------------- | --------------- | ----------------------------- |
 | _`onBumperPlaced`_ | Publish (nieuw) | _Fired bij bumper geplaatst_ |
+| _`onBumperPlacedWrong`_ | Publish (nieuw) | _Fired bij bumper verkeerd geplaatst_ |
 | _`onSaved`_ | Publish (nieuw) | _Fired bij save button geplaatst_ |
 
 ### 8.3 Benodigde Scripts / Componenten
