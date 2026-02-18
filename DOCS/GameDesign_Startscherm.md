@@ -13,7 +13,7 @@
 | **Datum**        | _18-02-2026_                                  |
 | **Versie**       | _0.0_                                         |
 | **Branch**       | _Feature/Startscherm_                         |
-| **Status**       | 📝 Concept / 🔨 In ontwikkeling / ✅ Afgerond |
+| **Status**       | !🔨 In ontwikkeling                           |
 
 ---
 
@@ -25,7 +25,7 @@
 
 ## 3. Beschrijving
 
-_!Geef een uitgebreide beschrijving van de feature. Wat doet het? Hoe past het binnen Galactic Ricochet? Waarom maakt het het spel beter?_
+Deze feature voegt een startscherm toe die je krijgt te zien als je de game opstart. Van dit scherm kan de user de game starten door de gegeven knop te clicken. Dit zorgt ervoor dat de user een makkelijkre transitie van  het opstarten van de game naar de core van de gameplay en voorkomt dat de user overprikeld raakt door alle features die je anders meteen zou zien.
 
 ---
 
@@ -41,23 +41,17 @@ _!Geef aan welke bestaande systemen worden beïnvloed of aangevuld (bijv. Score,
 
 | Bestaand Systeem   | Relatie / Impact               |
 | ------------------ | ------------------------------ |
-| Score              | _bijv. verhoogt score met X_   |
-| Combo / Multiplier | _bijv. reset combo bij missen_ |
-| Lives              | _bijv. geen invloed_           |
-| Input              | _bijv. extra knop nodig_       |
-| _Ander systeem_    | _…_                            |
+| _Null_               | _Null_                         |
 
 ### 4.3 Game Feel
 
 _!Welke feedback krijgt de speler? Denk aan: screenshake, geluid, visuele effecten, UI-updates, animaties._
 
-| Feedback Type | Beschrijving                       |
-| ------------- | ---------------------------------- |
-| Visueel       | _bijv. particle effect bij impact_ |
-| Audio         | _bijv. power-up geluid_            |
-| Screenshake   | _bijv. korte shake bij activatie_  |
-| UI            | _bijv. icoon verschijnt in HUD_    |
-| Animatie      | _bijv. idle → active state_        |
+| Feedback Type | Beschrijving                               |
+| ------------- | -------------------------------------------|
+| Visueel       | _Thematische visualisatie van componenten_ |
+| UI            | _Knop & menu voor levels_                  |
+| Animatie      | _color-transitie van button-text_          |
 
 ---
 
@@ -67,9 +61,7 @@ _!Definieer de concrete spelregels en instelbare waarden voor deze feature._
 
 | Parameter            | Waarde  | Beschrijving                    |
 | -------------------- | ------- | ------------------------------- |
-| _bijv. cooldown_     | _2 sec_ | _Tijd voordat het opnieuw kan_  |
-| _bijv. puntenwaarde_ | _500_   | _Punten per activatie_          |
-| _bijv. duur_         | _5 sec_ | _Hoe lang het effect actief is_ |
+| _Null_               | _Null_  |  _Null_                         |
 
 ---
 
@@ -84,7 +76,9 @@ _!Voeg schetsen, wireframes, of referentiebeelden toe. Beschrijf de gewenste loo
 
 ### Placeholder Art Beschrijving
 
-_!Beschrijf welke placeholder art nodig is om de feature te ontwikkelen en te testen._
+!
+
+_Achtergrond van menu die opkomt als start wordt gedrukt._
 
 ---
 
@@ -94,8 +88,7 @@ _!Welke geluiden zijn nodig? Beschrijf per geluid het gewenste karakter._
 
 | Geluid               | Beschrijving / Karakter            | Placeholder  |
 | -------------------- | ---------------------------------- | ------------ |
-| _bijv. activate SFX_ | _Korte, punchy synth hit_          | ☐ Ja / ☐ Nee |
-| _bijv. loop SFX_     | _Zacht ambient hum tijdens actief_ | ☐ Ja / ☐ Nee |
+| _Null_               | _Null_                             | ☐ Ja / ☐ Nee |
 
 ---
 
@@ -103,11 +96,9 @@ _!Welke geluiden zijn nodig? Beschrijf per geluid het gewenste karakter._
 
 ### 8.1 Architectuurlaag
 
-_!In welke laag van de architectuur past deze feature? (Input & Control / Interaction / Game Logic / Feedback)_
-
 ```
 ┌─────────────────────────────────────┐
-│   Feedback Layer                    │  ☐
+│   Feedback Layer                    │  ✅
 │   (UI, Visuals, Sound)              │
 ├─────────────────────────────────────┤
 │   Game Logic Layer                  │  ☐
@@ -116,7 +107,7 @@ _!In welke laag van de architectuur past deze feature? (Input & Control / Intera
 │   Interaction Layer                 │  ☐
 │   (Bumpers, Ball Physics)           │
 ├─────────────────────────────────────┤
-│   Input & Control Layer             │  ☐
+│   Input & Control Layer             │  ✅
 │   (Crosshair, Aim, Shoot)           │
 └─────────────────────────────────────┘
 ```
@@ -136,12 +127,11 @@ _!Welke nieuwe events worden aangemaakt? Op welke bestaande events wordt geabonn
 
 | Script / Component   | Verantwoordelijkheid                   |
 | -------------------- | -------------------------------------- |
-| _bijv. PowerUp.cs_   | _Detectie collision, activeren effect_ |
-| _bijv. PowerUpUI.cs_ | _Tonen van actief power-up icoon_      |
+| _Null_               | _Null_                                 |
 
 ### 8.4 Uitschakelbaar
 
-_!Beschrijf hoe deze feature uitgeschakeld kan worden zonder dat de rest van het spel breekt (conform de [Definition of Done](./DefinitionOfDone.md)). Welk GameObject moet gedeactiveerd worden?_
+_Als we de game willen laten runnen zonder deze feature moeten wij der voor zorgen dat de build start op de game-scene en niet de start-scene. Om dit te doen moeten we de game-scene annduiden als scene-0 in de Unity editor voor de creatie van de build._
 
 ---
 
@@ -151,7 +141,6 @@ _!Beschrijf hoe deze feature uitgeschakeld kan worden zonder dat de rest van het
 - [ ] Placeholder art maken / verzamelen
 - [ ] Placeholder audio maken / verzamelen
 - [ ] Script(s) aanmaken en implementeren
-- [ ] Events koppelen aan bestaande systemen
 - [ ] UI elementen toevoegen
 - [ ] Feature testen op bugs
 - [ ] Usertest uitvoeren (min. 3 spelers)
@@ -159,7 +148,6 @@ _!Beschrijf hoe deze feature uitgeschakeld kan worden zonder dat de rest van het
 - [ ] Technisch design document updaten
 - [ ] Alle documentatie dubbelchecken
 - [ ] Code review / pull request aanmaken
-- [ ] _Voeg extra taken toe indien nodig_
 
 ---
 
