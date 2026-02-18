@@ -1,7 +1,11 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StartEnter : MonoBehaviour
 {
+    [SerializeField] private GameObject thisObject;
+    [SerializeField] private GameObject levelMenu;
+
     private float timer = 0f;
     public bool visib;
     public CanvasGroup CanvasGroup;
@@ -10,12 +14,15 @@ public class StartEnter : MonoBehaviour
     {
         CanvasGroup = GetComponent<CanvasGroup>();
 
+        levelMenu.SetActive(false);
+        thisObject.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
         ToggleVisibility();
+        ToggleMenu();
     }
 
     private void ToggleVisibility()
@@ -34,6 +41,16 @@ public class StartEnter : MonoBehaviour
             CanvasGroup.alpha = 1f;
             visib = false;
             timer = 0;
+        }
+    }
+
+    private void ToggleMenu()
+    {
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Mouse0))
+
+        {
+            levelMenu.SetActive(true);
+            thisObject.SetActive(false);
         }
     }
 }
