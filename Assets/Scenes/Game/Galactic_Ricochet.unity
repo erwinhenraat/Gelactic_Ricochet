@@ -2044,6 +2044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 606507058}
+  - component: {fileID: 606507059}
   m_Layer: 3
   m_Name: bumpers
   m_TagString: Untagged
@@ -2073,6 +2074,22 @@ Transform:
   - {fileID: 1230924434}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &606507059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606507057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7a09b3deed0514e84e565b5cea0d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempBumperPrefab: {fileID: 8715983564485907861, guid: 8034340375a6f76418d0aa695f2aa93a, type: 3}
+  numberOfBoosts: 3
+  duration: 10
+  allBumpers: []
 --- !u!1001 &644514266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8715,6 +8732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1985099629}
+  - component: {fileID: 1985099630}
   m_Layer: 3
   m_Name: row
   m_TagString: Untagged
@@ -8745,6 +8763,22 @@ Transform:
   - {fileID: 1862671824}
   m_Father: {fileID: 606507058}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1985099630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985099628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7a09b3deed0514e84e565b5cea0d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempBumperPrefab: {fileID: 0}
+  numberOfBoosts: 3
+  duration: 10
+  allBumpers: []
 --- !u!1001 &1992156702
 PrefabInstance:
   m_ObjectHideFlags: 0
