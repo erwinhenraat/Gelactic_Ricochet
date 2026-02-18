@@ -32,7 +32,7 @@
 
 ## De feature heeft een duidelijk en concreet game design
 
-- Er is een game design formulier ingevuld
+- Er is een [game design formulier](.//GameDesign_Template.md) ingevuld
 - Er is een Userstory voor de feature gescherven
 - Er in een complete todo lijst gemaakt voor de userstory
 - De Game Gesign Documentatie van de feature is terug te vinden in de file `GameDesign_[FeatureNaam].md`
