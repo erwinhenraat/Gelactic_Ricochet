@@ -1,4 +1,4 @@
-# Game Design Document — [Feature Naam]
+# Game Design Document — [RNGbumper]
 
 > **Instructie:** Kopieer dit bestand en hernoem het naar `GameDesign_[FeatureNaam].md`.
 > Vul alle secties zo volledig mogelijk in voordat je begint met ontwikkelen.
@@ -9,32 +9,40 @@
 
 | Veld             | Invullen                                      |
 | ---------------- | --------------------------------------------- |
-| **Feature Naam** | _Korte naam van de feature_                   |
-| **Auteur**       | _Naam van de ontwerper_                       |
-| **Datum**        | _dd-mm-jjjj_                                  |
+| **Feature Naam** | _RNG Bumper_                   |
+| **Auteur**       | _Mads Hoogeveen_                       |
+| **Datum**        | _3-3-2026_                                  |
 | **Versie**       | _1.0_                                         |
-| **Branch**       | `Feature/[FeatureNaam]`                       |
-| **Status**       | 📝 Concept / 🔨 In ontwikkeling / ✅ Afgerond |
+| **Branch**       | `origin/feature/RNGbumper`                       |
+| **Status**       | ✅ Afgerond |
 
 ---
 
 ## 2. User Story
 
-> Als **[type speler]** wil ik **[actie/mogelijkheid]** zodat **[gewenst resultaat / gevoel / doel]**.
+>Als speler wil ik dat als de game begint dat er RNG bumpers zijn die de bal kan aanraken. 
+Als deze Bumper word aangeraakt word er een random waarde aan punten aan de speler gegeven.
 
 ---
 
 ## 3. Beschrijving
 
-_Geef een uitgebreide beschrijving van de feature. Wat doet het? Hoe past het binnen Galactic Ricochet? Waarom maakt het het spel beter?_
+Deze feature bevat een RNG bumper prefab die er voor 
+zorgt als het balletje de bumper raakt, dat er dan een
+random aantal aan punten tussen bepaalde eenheden word gegeven aan de speler.
 
 ---
 
 ## 4. Gameplay Impact
 
+Deze feature zorgt ervoor dat er meer spanning en variatie in gameplay
+is vanwege de random punten die kunnen worden verdiend. Spelers zullen worden aangemoedigd
+om risico's te nemen door de bumper te raken, in de hoop op een hoge score.
+
 ### 4.1 Kernmechanisme
 
-_Beschrijf hoe de speler met deze feature interacteert. Welke input is nodig? Wat is het directe resultaat?_
+Het balletje moet de bumper hitten
+het directe resultaat is een random aantal aan punten dat aan de speler word gegeven.
 
 ### 4.2 Relatie met bestaande systemen
 
@@ -42,11 +50,11 @@ _Geef aan welke bestaande systemen worden beïnvloed of aangevuld (bijv. Score, 
 
 | Bestaand Systeem   | Relatie / Impact               |
 | ------------------ | ------------------------------ |
-| Score              | _bijv. verhoogt score met X_   |
-| Combo / Multiplier | _bijv. reset combo bij missen_ |
-| Lives              | _bijv. geen invloed_           |
-| Input              | _bijv. extra knop nodig_       |
-| _Ander systeem_    | _…_                            |
+| Score              |  Random punten word aan de speler gegeven   
+| Combo / Multiplier |  De mulitplier word gebruikt voor de RNG bumper zodat de punten hiervan vermedigvuldigd kunnen worden |
+| Lives              |	geen invloed             
+| Input              |  geen invloed       
+| _Ander systeem_    |  geen invloed                          
 
 ### 4.3 Game Feel
 
@@ -54,11 +62,11 @@ _Welke feedback krijgt de speler? Denk aan: screenshake, geluid, visuele effecte
 
 | Feedback Type | Beschrijving                       |
 | ------------- | ---------------------------------- |
-| Visueel       | _bijv. particle effect bij impact_ |
-| Audio         | _bijv. power-up geluid_            |
-| Screenshake   | _bijv. korte shake bij activatie_  |
-| UI            | _bijv. icoon verschijnt in HUD_    |
-| Animatie      | _bijv. idle → active state_        |
+| Visueel       | RNG bumper balletje met (?) Symbool 
+| Audio         | Reward geluidje           |
+| Screenshake   | geen invloed    
+| UI            | geen invloed       |
+| Animatie      | geen invloed            
 
 ---
 
@@ -68,15 +76,16 @@ _Definieer de concrete spelregels en instelbare waarden voor deze feature._
 
 | Parameter            | Waarde  | Beschrijving                    |
 | -------------------- | ------- | ------------------------------- |
-| _bijv. cooldown_     | _2 sec_ | _Tijd voordat het opnieuw kan_  |
-| _bijv. puntenwaarde_ | _500_   | _Punten per activatie_          |
-| _bijv. duur_         | _5 sec_ | _Hoe lang het effect actief is_ |
+| RNG Systeem		   | Random Nummer tussen 1-... | De RNG bumper prefab kan worden aangepast op basis van hoe laag en hoog de maximale en minmale random waarde is|
+
 
 ---
 
 ## 6. Visueel Ontwerp
 
 _Voeg schetsen, wireframes, of referentiebeelden toe. Beschrijf de gewenste look & feel._
+
+
 
 ### Schetsen / Referenties
 
