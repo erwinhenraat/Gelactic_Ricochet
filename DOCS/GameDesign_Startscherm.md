@@ -25,7 +25,7 @@
 
 ## 3. Beschrijving
 
-Deze feature voegt een startscherm toe die je krijgt te zien als je de game opstart. Van dit scherm kan de user de game starten door de gegeven knop te clicken. Dit zorgt ervoor dat de user een makkelijkre transitie van  het opstarten van de game naar de core van de gameplay en voorkomt dat de user overprikeld raakt door alle features die je anders meteen zou zien.
+Deze feature voegt een startscherm toe die je krijgt te zien als je de game opstart. Van dit scherm kan de user de game starten door de gegeven knop te clicken. Dit zorgt ervoor dat de user een makkelijker transitie van  het opstarten van de game naar de core van de gameplay en voorkomt dat de user overprikeld raakt door .
 
 ---
 
@@ -41,7 +41,7 @@ _!Geef aan welke bestaande systemen worden beïnvloed of aangevuld (bijv. Score,
 
 | Bestaand Systeem   | Relatie / Impact               |
 | ------------------ | ------------------------------ |
-| _Null_               | _Null_                         |
+| _Null_             | _Null_                         |
 
 ### 4.3 Game Feel
 
@@ -131,21 +131,18 @@ _!Welke nieuwe events worden aangemaakt? Op welke bestaande events wordt geabonn
 
 ### 8.4 Uitschakelbaar
 
-_Als we de game willen laten runnen zonder deze feature moeten wij der voor zorgen dat de build start op de game-scene en niet de start-scene. Om dit te doen moeten we de game-scene annduiden als scene-0 in de Unity editor voor de creatie van de build._
+_Als we de game willen laten runnen zonder deze feature moeten wij der voor zorgen dat de build start op de game-scene en niet de start-scene. Om dit te doen moeten we de game-scene annduiden als scene-0 in de Unity editor **voor** de creatie van de build._
 
 ---
 
 ## 9. Todo Lijst
 
-- [ ] Game design document invullen en reviewen
-- [ ] Placeholder art maken / verzamelen
-- [ ] Placeholder audio maken / verzamelen
+- [✅] Game design document invullen en reviewen
 - [ ] Script(s) aanmaken en implementeren
-- [ ] UI elementen toevoegen
+- [✅] UI elementen toevoegen
 - [ ] Feature testen op bugs
 - [ ] Usertest uitvoeren (min. 3 spelers)
 - [ ] Usertest documentatie schrijven (`Usertest_[FeatureNaam].md`)
-- [ ] Technisch design document updaten
 - [ ] Alle documentatie dubbelchecken
 - [ ] Code review / pull request aanmaken
 
@@ -155,10 +152,9 @@ _Als we de game willen laten runnen zonder deze feature moeten wij der voor zorg
 
 _Wanneer is deze feature "af"? Verwijs ook naar de [Definition of Done](./DefinitionOfDone.md)._
 
-- [ ] De user story is volledig geïmplementeerd
-- [ ] Alle parameters zijn instelbaar via de Unity Inspector
-- [ ] De feature is uitschakelbaar zonder bugs
-- [ ] Alle placeholder art/audio is aanwezig
+- [✅] De user story is volledig geïmplementeerd
+- [✅] De feature is uitschakelbaar zonder bugs
+- [✅] Alle placeholder art/audio is aanwezig
 - [ ] Usertest is afgerond en gedocumenteerd
 - [ ] Geen errors of bugs in test build
 - [ ] Technisch design document is bijgewerkt
@@ -169,5 +165,6 @@ _Wanneer is deze feature "af"? Verwijs ook naar de [Definition of Done](./Defini
 ## 11. Opmerkingen / Open Vragen
 
 _!Noteer hier eventuele openstaande vragen, risico's of afhankelijkheden._
+Omdat Wij niet weten welke scene's nog moeten worden toegevoegd kunnen wij deze nit in de menu zetten en moet dit later weer in aanvraag komen.
 
 - _…_
