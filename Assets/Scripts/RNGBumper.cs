@@ -7,7 +7,7 @@ public class RNGHitBumper : MonoBehaviour
     [SerializeField] private int maxValue = 100000;
 
     private ParticleSystem ps;
-    public static event Action<Transform, int> onHitBumper;
+    public static event Action<Transform, int> onHitRNGBumper;
     
 
     private void Start()
@@ -21,10 +21,10 @@ public class RNGHitBumper : MonoBehaviour
         if (collision.gameObject.CompareTag("Ball"))
         {
             Debug.Log("Bumper Hit!");
-            Debug.Log(onHitBumper == null ? "Nobody listening" : "Someone listening");
+            Debug.Log(onHitRNGBumper == null ? "Nobody listening" : "Someone listening");
 
             int randomValue = UnityEngine.Random.Range(minValue, maxValue + 1);
-            onHitBumper?.Invoke(transform, randomValue);
+            onHitRNGBumper?.Invoke(transform, randomValue);
 
             ps?.Play();
         }

@@ -22,7 +22,7 @@ public class Score : MonoBehaviour
     void Start()
     {
         HitBumper.onHitBumper += GetScore;
-        RNGHitBumper.onHitBumper += GetScore;
+        RNGHitBumper.onHitRNGBumper += GetScore;
         Multiplier.onMultiplierUpdate += SetMultiplier;
         Lives.onGameOver += CheckForHighScore;
         SelectInitials.onInitialsSubmitted += SaveHighScore;
@@ -34,7 +34,7 @@ public class Score : MonoBehaviour
     private void OnDisable()
     {
         HitBumper.onHitBumper -= GetScore;
-        RNGHitBumper.onHitBumper += GetScore;
+        RNGHitBumper.onHitRNGBumper -= GetScore;
         Multiplier.onMultiplierUpdate -= SetMultiplier;
         Lives.onGameOver -= CheckForHighScore;
         SelectInitials.onInitialsSubmitted -= SaveHighScore;
