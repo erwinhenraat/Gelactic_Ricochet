@@ -46,11 +46,13 @@ public class StartEnter : MonoBehaviour
 
     private void ToggleMenu()
     {
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.JoystickButton7))
 
         {
             levelMenu.SetActive(true);
             thisObject.SetActive(false);
         }
+
+        
     }
 }
