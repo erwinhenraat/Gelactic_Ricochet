@@ -13,7 +13,7 @@
 | **Datum**        | _18-02-2026_                                  |
 | **Versie**       | _0.0_                                         |
 | **Branch**       | _Feature/Startscherm_                         |
-| **Status**       | !🔨 In ontwikkeling                           |
+| **Status**       | ✅ Afgerond                                   |
 
 ---
 
@@ -33,11 +33,11 @@ Deze feature voegt een startscherm toe die je krijgt te zien als je de game opst
 
 ### 4.1 Kernmechanisme
 
-!Deze feature maakt het zo dat de speler een zogenaamde _landing page_ heeft. Via deze _Landing page_ kan de speler een menu openen waar die uit een of meerdere _Levels_ kan kiezen.
+Deze feature maakt het zo dat de speler een zogenaamde _landing page_ heeft. Via deze _Landing page_ kan de speler een menu openen waar die uit een of meerdere _Levels_ kan kiezen. Als de speler een keuze maakt kan de speler op de knop drukken van de gecorreleerde _Level_, wordt de speler verwijsd naar de correcte scene waarin die _Level_ zich bevindt.
 
 ### 4.2 Relatie met bestaande systemen
 
-_!Geef aan welke bestaande systemen worden beïnvloed of aangevuld (bijv. Score, Combo, Lives, Multiplier, Input). Verwijs waar nodig naar het [Technisch Design](./TechnicalDesign.md)._
+_n.v.t._
 
 | Bestaand Systeem   | Relatie / Impact               |
 | ------------------ | ------------------------------ |
@@ -45,7 +45,7 @@ _!Geef aan welke bestaande systemen worden beïnvloed of aangevuld (bijv. Score,
 
 ### 4.3 Game Feel
 
-_!Welke feedback krijgt de speler? Denk aan: screenshake, geluid, visuele effecten, UI-updates, animaties._
+_Feedback die de speler krijgt van onze mechanic._
 
 | Feedback Type | Beschrijving                               |
 | ------------- | -------------------------------------------|
@@ -57,7 +57,7 @@ _!Welke feedback krijgt de speler? Denk aan: screenshake, geluid, visuele effect
 
 ## 5. Regels & Parameters
 
-_!Definieer de concrete spelregels en instelbare waarden voor deze feature._
+_n.v.t._
 
 | Parameter            | Waarde  | Beschrijving                    |
 | -------------------- | ------- | ------------------------------- |
@@ -67,28 +67,17 @@ _!Definieer de concrete spelregels en instelbare waarden voor deze feature._
 
 ## 6. Visueel Ontwerp
 
-_!Voeg schetsen, wireframes, of referentiebeelden toe. Beschrijf de gewenste look & feel._
-
 ### Schetsen / Referenties
 
-> _!Plaats hier afbeeldingen of links naar referentiemateriaal._
-> `![beschrijving](pad/naar/afbeelding.png)`
-
-### Placeholder Art Beschrijving
-
-!
-
-_Achtergrond van menu die opkomt als start wordt gedrukt._
-
----
+> [Inpsiratie van de layout](./../Assets/2d/readMe_Content/arcadeStart.png)
 
 ## 7. Audio Ontwerp
 
-_!Welke geluiden zijn nodig? Beschrijf per geluid het gewenste karakter._
+_Audio die gebruikt wordt in de mechanic._
 
 | Geluid               | Beschrijving / Karakter            | Placeholder  |
 | -------------------- | ---------------------------------- | ------------ |
-| _Null_               | _Null_                             | ☐ Ja / ☐ Nee |
+| Achtergrond muziek   | Ambiance meegeven aan de speler    | ☐ Ja / ✅ Nee|
 
 ---
 
@@ -114,16 +103,15 @@ _!Welke geluiden zijn nodig? Beschrijf per geluid het gewenste karakter._
 
 ### 8.2 Benodigde Events
 
-_!Welke nieuwe events worden aangemaakt? Op welke bestaande events wordt geabonneerd?_
+_Er wordt niet geaboneerd op een huidige event noch wordt er een aangemaakt._
 
 | Event                        | Richting        | Beschrijving                  |
 | ---------------------------- | --------------- | ----------------------------- |
-| _bijv. `onPowerUpCollected`_ | Publish (nieuw) | _Fired bij oppakken power-up_ |
-| _bijv. `onHitBumper`_        | Subscribe       | _Luistert naar bumper hits_   |
+| _null_                       | _Null_          | _Null_                        |
 
 ### 8.3 Benodigde Scripts / Componenten
 
-!
+_n.v.t._
 
 | Script / Component   | Verantwoordelijkheid                   |
 | -------------------- | -------------------------------------- |
@@ -138,7 +126,7 @@ _Als we de game willen laten runnen zonder deze feature moeten wij der voor zorg
 ## 9. Todo Lijst
 
 - [✅] Game design document invullen en reviewen
-- [ ] Script(s) aanmaken en implementeren
+- [✅] Script(s) aanmaken en implementeren
 - [✅] UI elementen toevoegen
 - [ ] Feature testen op bugs
 - [ ] Usertest uitvoeren (min. 3 spelers)
