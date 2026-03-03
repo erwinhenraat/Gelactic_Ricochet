@@ -1,6 +1,6 @@
 # Galactic Ricochet
 
-![gameplay](./Assets/2d/readme_content/screen.png)
+![gameplay](./readme_content/screen.png)
 
 A work in progress game development project.
 
