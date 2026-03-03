@@ -13,8 +13,9 @@ public class ScorePop : MonoBehaviour
     private bool _priority = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {        
+    {
         Score.onGetScore += Pop;
+        Score.onGetChromaScore+= ChromaPop;
         ExtraBall.onExtraBall += PopMessage;
         CrosshairInput.onSwapControls += PopMessage;
         Restart.onRestart += PopMessage;
@@ -26,12 +27,30 @@ public class ScorePop : MonoBehaviour
     private void OnDisable()
     {
         Score.onGetScore -= Pop;
+        Score.onGetChromaScore += ChromaPop;
         ExtraBall.onExtraBall -= PopMessage;
         CrosshairInput.onSwapControls -= PopMessage;
         Restart.onRestart -= PopMessage;
         Lives.onGameOver -= PopMessage;
     }
-    private void Pop(Vector2 location, int value) {
+    private void Pop(Vector2 location, int value)
+    {
+        if (!_priority)
+        {
+            maxScale = 4f;
+            startScale = 1f;
+            currentScale = startScale;
+            scaleDiff = maxScale - startScale;
+            Vector2 screenPoint = Camera.main.WorldToScreenPoint(location);
+            textfield.transform.position = screenPoint;
+            textfield.text = string.Empty + value;
+            StartCoroutine(Animate());
+        }
+
+    }
+
+    private void ChromaPop(Vector2 location, int value)
+    {
         if (!_priority)
         {
             maxScale = 4f;
