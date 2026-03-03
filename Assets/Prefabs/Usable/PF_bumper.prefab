@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1677068497175764625}
   - component: {fileID: -1191503555937212711}
   m_Layer: 0
-  m_Name: bumper
+  m_Name: PF_bumper
   m_TagString: Combo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
