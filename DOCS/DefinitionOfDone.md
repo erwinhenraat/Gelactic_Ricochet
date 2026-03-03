@@ -2,7 +2,112 @@
 
 ## De feature is ontwikkeld op de correcte feature branch
 
-- Gebruik voor de naam van de branch `Feature/[FeatureNaam]`
+- Gebruik voor de naam van de branch `feature/[featureNaam]` (lowercase)
+
+## Folderstructuur
+
+- Todo's en assets zijn verwerkt binnen de juiste folderstructuur
+
+```
+Assets/                                    # Hoofdmap van het Unity-project
+├── Animations/                            # Animator controllers en animatieclips
+│   ├── AC_bumper.controller
+│   └── AN_bumper.anim
+├── GameData/                              # Speldata en configuratiebestanden
+│   └── Physics/                           # Physics materials voor botsingsgedrag
+│       └── PM_ball.physicsMaterial2D
+├── Graphics/                              # Alle visuele assets (afbeeldingen, fonts, sprites)
+│   ├── Background/                        # Achtergrondafbeeldingen voor het speelveld
+│   │   ├── BG_space.jpg
+│   │   ├── BG_space_2.jpg
+│   │   └── ...
+│   ├── Fonts/                             # Lettertypen en bijbehorende SDF-assets voor TextMeshPro
+│   │   ├── ARCADECLASSIC.TTF
+│   │   ├── Cosmic-Cube.ttf
+│   │   └── ...
+│   ├── GraphicsData/                      # Render-instellingen en volume profiles
+│   │   └── Global Volume Profile.asset
+│   └── Sprites/                           # 2D sprites voor game-objecten en UI
+│       ├── SP_arrow.png
+│       ├── SP_ball.png
+│       ├── ...
+│       └── Bumper/                        # Sprite sheet frames voor de bumper-animatie
+│           ├── SP_bumper_0001.png
+│           ├── SP_bumper_0002.png
+│           └── ...
+├── Materials/                             # Unity materials (momenteel leeg)
+│   (leeg)
+├── Prefabs/                               # Herbruikbare prefab-objecten
+│   ├── ArtOnly/                           # Prefabs met alleen visuele assets (momenteel leeg)
+│   │   (leeg)
+│   └── Usable/                            # Functionele prefabs voor gebruik in de scene
+│       ├── PF_ball.prefab
+│       ├── PF_bumper.prefab
+│       └── PF_cannon.prefab
+├── Scenes/                                # Unity scenes
+│   └── Galactic_Ricochet.unity
+├── Scripts/                               # Alle C#-scripts, ingedeeld per domein
+│   ├── Audio/                             # Scripts voor geluid en muziek
+│   │   └── PlaySounds.cs
+│   ├── Gameplay/                          # Kernlogica van het spel (scores, levens, schieten, etc.)
+│   │   ├── Aim.cs
+│   │   ├── Combo.cs
+│   │   └── ...
+│   ├── Input/                             # Scripts voor spelerinvoer en besturing
+│   │   ├── CrosshairInput.cs
+│   │   └── SelectInitials.cs
+│   └── Visuals/                           # Scripts voor visuele effecten (screenshake, popups, etc.)
+│       ├── AnimationOffset.cs
+│       ├── ComboMood.cs
+│       └── ...
+├── Sounds/                                # Geluidseffecten en achtergrondmuziek
+│   ├── AF_boom.wav
+│   ├── AF_bumper.aiff
+│   └── ...
+├── TextMeshPro/                           # Niet gebruiken
+└── TutorialInfo/                          # Niet gebruiken
+```
+
+## Naming conventions
+
+Algemeen:
+
+- Taal: Engels
+- Bestanden gebruiken een **prefix** die het assettype aangeeft, gevolgd door een underscore en een beschrijvende naam
+
+### Prefixes per assettype
+
+| Prefix | Type                | Voorbeeld                   |
+| ------ | ------------------- | --------------------------- |
+| `AC_`  | Animator Controller | `AC_bumper.controller`      |
+| `AN_`  | Animation Clip      | `AN_bumper.anim`            |
+| `PM_`  | Physics Material    | `PM_ball.physicsMaterial2D` |
+| `BG_`  | Background Image    | `BG_space.jpg`              |
+| `SP_`  | Sprite              | `SP_arrow.png`              |
+| `PF_`  | Prefab              | `PF_ball.prefab`            |
+| `AF_`  | Audio Effect (SFX)  | `AF_boom.wav`               |
+| `AL_`  | Audio Loop (muziek) | `AL_bg_loop.wav`            |
+
+### Scripts
+
+- PascalCasing, geen prefix: `AnimationOffset.cs`, `GameManager.cs`
+
+### Scenes
+
+- PascalCasing met underscores: `Galactic_Ricochet.unity`
+
+### Sprite sheets (animatieframes)
+
+- Prefix + naam + underscore + volgnummer (4 cijfers): `SP_bumper_0001.png`
+
+## Art
+
+- Art assets voldoen aan de eisen van de styleguide
+- Visuele consistentie met de rest van de assets en/of de art direction
+- `Polygonen` en `Polyflow` correct (geen dubbele / flipped faces)
+- Geen onnodige drawcalls , texture atlassing en single materials per object
+- Game assets zijn verwerkt tot prefabs in Unity en staan in de juiste folder
+- Game assets hebben zonodig: controllers animaties materials en of shaders in de engine.
 
 ## De code voldoet aan basic code conventions voor C# en Unity
 
@@ -17,7 +122,7 @@
 - De feature bevat geen Bugs
 - De feature is getest in Unity versie **6000.3.8**
 
-## De feature is grondig ge-usertest op fun en usabillity
+## De feature is grondig ge-usertest op fun, usability en playability
 
 - Er is door minimaal 3 verschillende spelers getest
 - Hierbij is de speler niet geholpen tenzij deze vast kwam te zitten
@@ -53,3 +158,12 @@
 ---
 
 _Heb je aan de bovenstaande voorwaarden voldaan? Maak dan een [pull request](https://github.com/erwinhenraat/Galactic_Ricochet/pulls) aan._
+
+---
+
+## De pull request is goedgekeurd
+
+- De game is getest op de development branch werkt zoals het moet:
+  - geen bugs
+  - geen conflicten
+  - geen merge errors
