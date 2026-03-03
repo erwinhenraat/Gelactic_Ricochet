@@ -85,18 +85,19 @@ _Definieer de concrete spelregels en instelbare waarden voor deze feature._
 
 _Voeg schetsen, wireframes, of referentiebeelden toe. Beschrijf de gewenste look & feel._
 
-
+https://cdn.discordapp.com/attachments/1316403516184723466/1478335161862062130/image.png?ex=69a80668&is=69a6b4e8&hm=5a072585c88a09326c18247d725c3e3ad10f24ef1a81be751c2b1fac90864180&
 
 ### Schetsen / Referenties
 
 > _Plaats hier afbeeldingen of links naar referentiemateriaal._
-> `![beschrijving](pad/naar/afbeelding.png)`
+https://media.discordapp.net/attachments/1316403516184723466/1478334991766130708/image.png?ex=69a80640&is=69a6b4c0&hm=161e7a2e2336a7949bf73db0ce5dd21b2db6e6e12dbda1cb81983e47633e8feb&=&format=webp&quality=lossless&width=81&height=84
+https://cdn.discordapp.com/attachments/1316403516184723466/1478335161862062130/image.png?ex=69a80668&is=69a6b4e8&hm=5a072585c88a09326c18247d725c3e3ad10f24ef1a81be751c2b1fac90864180&
 
 ### Placeholder Art Beschrijving
 
 _Beschrijf welke placeholder art nodig is om de feature te ontwikkelen en te testen._
 
----
+al bestaande bumper
 
 ## 7. Audio Ontwerp
 
@@ -104,12 +105,13 @@ _Welke geluiden zijn nodig? Beschrijf per geluid het gewenste karakter._
 
 | Geluid               | Beschrijving / Karakter            | Placeholder  |
 | -------------------- | ---------------------------------- | ------------ |
-| _bijv. activate SFX_ | _Korte, punchy synth hit_          | ☐ Ja / ☐ Nee |
-| _bijv. loop SFX_     | _Zacht ambient hum tijdens actief_ | ☐ Ja / ☐ Nee |
+| hit sound			   | appart geluid als je de rng bumper raakt           | ☐ Ja / ☐ Nee |
 
 ---
 
 ## 8. Technische Overwegingen
+
+we hebben niks anders gebruikt
 
 ### 8.1 Architectuurlaag
 
@@ -117,13 +119,13 @@ _In welke laag van de architectuur past deze feature? (Input & Control / Interac
 
 ```
 ┌─────────────────────────────────────┐
-│   Feedback Layer                    │  ☐
+│   Feedback Layer                    │  [x]
 │   (UI, Visuals, Sound)              │
 ├─────────────────────────────────────┤
-│   Game Logic Layer                  │  ☐
+│   Game Logic Layer                  │  [x]
 │   (Scoring, Lives, Combos)          │
 ├─────────────────────────────────────┤
-│   Interaction Layer                 │  ☐
+│   Interaction Layer                 │  [x]
 │   (Bumpers, Ball Physics)           │
 ├─────────────────────────────────────┤
 │   Input & Control Layer             │  ☐
@@ -137,58 +139,52 @@ _Welke nieuwe events worden aangemaakt? Op welke bestaande events wordt geabonne
 
 | Event                        | Richting        | Beschrijving                  |
 | ---------------------------- | --------------- | ----------------------------- |
-| _bijv. `onPowerUpCollected`_ | Publish (nieuw) | _Fired bij oppakken power-up_ |
-| _bijv. `onHitBumper`_        | Subscribe       | _Luistert naar bumper hits_   |
+| On hit RNG bumper			   | Subscribe		 | Get a random score			 |
 
 ### 8.3 Benodigde Scripts / Componenten
 
 | Script / Component   | Verantwoordelijkheid                   |
 | -------------------- | -------------------------------------- |
-| _bijv. PowerUp.cs_   | _Detectie collision, activeren effect_ |
-| _bijv. PowerUpUI.cs_ | _Tonen van actief power-up icoon_      |
+| RNGBumper.cs		   | Detectie collision, activeren effect   |
 
 ### 8.4 Uitschakelbaar
 
 _Beschrijf hoe deze feature uitgeschakeld kan worden zonder dat de rest van het spel breekt (conform de [Definition of Done](./DefinitionOfDone.md)). Welk GameObject moet gedeactiveerd worden?_
 
----
+als de RNG bumpers wodern uigeschakeld kan het spel nog steeds gespeeld worden maar zonder de RNG bumpers.
 
 ## 9. Todo Lijst
 
 _Maak een concrete checklist van alle taken die nodig zijn om deze feature te implementeren._
 
-- [ ] Game design document invullen en reviewen
+- [ x] Game design document invullen en reviewen
 - [ ] Placeholder art maken / verzamelen
-- [ ] Placeholder audio maken / verzamelen
-- [ ] Script(s) aanmaken en implementeren
-- [ ] Events koppelen aan bestaande systemen
-- [ ] UI elementen toevoegen
-- [ ] Feature testen op bugs
+- [ x] Placeholder audio maken / verzamelen
+- [X] Script(s) aanmaken en implementeren
+- [ x] Events koppelen aan bestaande systemen
+- [ x] UI elementen toevoegen
+- [ x] Feature testen op bugs
 - [ ] Usertest uitvoeren (min. 3 spelers)
 - [ ] Usertest documentatie schrijven (`Usertest_[FeatureNaam].md`)
-- [ ] Technisch design document updaten
-- [ ] Code review / pull request aanmaken
-- [ ] _Voeg extra taken toe indien nodig_
+- [ x] Technisch design document updaten
+- [ x] Code review / pull request aanmaken
 
----
 
 ## 10. Acceptatiecriteria
 
 _Wanneer is deze feature "af"? Verwijs ook naar de [Definition of Done](./DefinitionOfDone.md)._
 
-- [ ] De user story is volledig geïmplementeerd
+- [x ] De user story is volledig geïmplementeerd
 - [ ] Alle parameters zijn instelbaar via de Unity Inspector
-- [ ] De feature is uitschakelbaar zonder bugs
-- [ ] Alle placeholder art/audio is aanwezig
+- [x ] De feature is uitschakelbaar zonder bugs
+- [x ] Alle placeholder art/audio is aanwezig
 - [ ] Usertest is afgerond en gedocumenteerd
-- [ ] Geen errors of bugs in test build
-- [ ] Technisch design document is bijgewerkt
-- [ ] Pull request is goedgekeurd en gemerged naar `development`
-
----
+- [x ] Geen errors of bugs in test build
+- [x ] Technisch design document is bijgewerkt
+- [x ] Pull request is goedgekeurd en gemerged naar `development`
 
 ## 11. Opmerkingen / Open Vragen
 
 _Noteer hier eventuele openstaande vragen, risico's of afhankelijkheden._
 
-- _…_
+voor nu niet
