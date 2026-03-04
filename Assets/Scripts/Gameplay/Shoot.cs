@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using TMPro.EditorUtilities;
 using UnityEngine;
 
 public class Shoot : MonoBehaviour
@@ -8,8 +7,6 @@ public class Shoot : MonoBehaviour
     public static Action<GameObject> onShootNewBall;
     public static Action onPress;
     public static Action onRelease;
-    public static Action onCancel;
-
 
     [SerializeField] private GameObject prefab;
     [SerializeField] private float forcePerSecond = 20f;
@@ -66,6 +63,7 @@ public class Shoot : MonoBehaviour
         Lives.onReload -= ReloadShot; 
         CrosshairInput.onPressFire1 -= HandlePressFire;
         CrosshairInput.onReleaseFire1 -= HandleReleaseFire;
+        CrosshairInput.onPressFire2 -= HandleCancel;
     }
     void Update()
     {
@@ -103,6 +101,7 @@ public class Shoot : MonoBehaviour
 
         if (_cancel)
         {
+            onRelease?.Invoke();
             ActivateLine(false);
             particles.Stop();
         }

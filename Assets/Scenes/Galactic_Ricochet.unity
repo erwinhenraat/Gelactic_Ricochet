@@ -9051,6 +9051,10 @@ PrefabInstance:
       value: Cannon
       objectReference: {fileID: 0}
     - target: {fileID: 8075201842533547678, guid: a0f875d11f9d5d840a7c75c2f70da037, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8075201842533547678, guid: a0f875d11f9d5d840a7c75c2f70da037, type: 3}
       propertyPath: lineStartWidth
       value: 0.3
       objectReference: {fileID: 0}
