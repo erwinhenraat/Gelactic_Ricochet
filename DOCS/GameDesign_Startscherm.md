@@ -55,10 +55,10 @@ _Feedback die de speler krijgt van onze mechanic._
 
 ## 5. Regels & Parameters
 
-| Parameter            | Waarde  | Beschrijving                             |
-| -------------------- | ------- | ---------------------------------------- |
-| Timer                | 0 sec   | zet bool _visib != visib_ als _timer = 1_|
-| Visib                | true    | Als tue zet tekst visible ander invisible|
+| Parameter            | Waarde  | Beschrijving                              |
+| -------------------- | ------- | ----------------------------------------  |
+| Timer                | 0 sec   | zet bool _visib != visib_ als _timer = 1_ |
+| Visib                | true    | Als true zet tekst visible ander invisible|
 
 ---
 
@@ -66,7 +66,7 @@ _Feedback die de speler krijgt van onze mechanic._
 
 ### Schetsen / Referenties
 
-> [Inpsiratie van de layout](./../readMe_Content/arcadeStart.png)
+> [Inpsiratie van de layout van de Startscherm](./../readMe_Content/arcadeStart.png)
 
 ## 7. Audio Ontwerp
 
@@ -125,10 +125,10 @@ _Als we de game willen laten runnen zonder deze feature moeten wij der voor zorg
 - [✅] Game design document invullen en reviewen
 - [✅] Script(s) aanmaken en implementeren
 - [✅] UI elementen toevoegen
-- [ ] Feature testen op bugs
-- [ ] Usertest uitvoeren (min. 3 spelers)
+- [✅] Feature testen op bugs
+- [✅] Usertest uitvoeren (min. 3 spelers)
 - [ ] Usertest documentatie schrijven (`Usertest_[FeatureNaam].md`)
-- [ ] Alle documentatie dubbelchecken
+- [✅] Alle documentatie dubbelchecken
 - [ ] Code review / pull request aanmaken
 
 ---
@@ -141,8 +141,7 @@ _Wanneer is deze feature "af"? Verwijs ook naar de [Definition of Done](./Defini
 - [✅] De feature is uitschakelbaar zonder bugs
 - [✅] Alle placeholder art/audio is aanwezig
 - [ ] Usertest is afgerond en gedocumenteerd
-- [ ] Geen errors of bugs in test build
-- [ ] Technisch design document is bijgewerkt
+- [✅] Geen errors of bugs in test build
 - [ ] Pull request is goedgekeurd en gemerged naar `development`
 
 ---
