@@ -7,14 +7,5 @@ public class ButtonPress : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

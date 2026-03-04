@@ -7,8 +7,8 @@ public class StartEnter : MonoBehaviour
     [SerializeField] private GameObject levelMenu;
 
     private float timer = 0f;
-    public bool visib;
-    public CanvasGroup CanvasGroup;
+    private bool visib;
+    private CanvasGroup CanvasGroup;
 
     void Start()
     {
@@ -18,7 +18,6 @@ public class StartEnter : MonoBehaviour
         thisObject.SetActive(true);
     }
 
-    // Update is called once per frame
     void Update()
     {
         ToggleVisibility();
@@ -46,13 +45,11 @@ public class StartEnter : MonoBehaviour
 
     private void ToggleMenu()
     {
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.JoystickButton7))
-
-        {
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.JoystickButton7))
+        { 
             levelMenu.SetActive(true);
             thisObject.SetActive(false);
         }
-
-        
+ 
     }
 }
