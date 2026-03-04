@@ -1,6 +1,4 @@
-# Game Design Document — [Feature Naam]
-
-> **Instructie:** Alle segmenten met een uitroepteken (!) aan het begin moeten no worden aangepast.
+# Game Design Document — Startsherm
 
 ---
 
@@ -37,11 +35,11 @@ Deze feature maakt het zo dat de speler een zogenaamde _landing page_ heeft. Via
 
 ### 4.2 Relatie met bestaande systemen
 
-_n.v.t._
+Deze feature interacteert niet met bestaande systemen.
 
 | Bestaand Systeem   | Relatie / Impact               |
 | ------------------ | ------------------------------ |
-| _Null_             | _Null_                         |
+| _n.v.t._           | _n.v.t._                       |
 
 ### 4.3 Game Feel
 
@@ -57,11 +55,10 @@ _Feedback die de speler krijgt van onze mechanic._
 
 ## 5. Regels & Parameters
 
-_n.v.t._
-
-| Parameter            | Waarde  | Beschrijving                    |
-| -------------------- | ------- | ------------------------------- |
-| _Null_               | _Null_  |  _Null_                         |
+| Parameter            | Waarde  | Beschrijving                             |
+| -------------------- | ------- | ---------------------------------------- |
+| Timer                | 0 sec   | zet bool _visib != visib_ als _timer = 1_|
+| Visib                | true    | Als tue zet tekst visible ander invisible|
 
 ---
 
@@ -69,7 +66,7 @@ _n.v.t._
 
 ### Schetsen / Referenties
 
-> [Inpsiratie van de layout](./../Assets/2d/readMe_Content/arcadeStart.png)
+> [Inpsiratie van de layout](./../readMe_Content/arcadeStart.png)
 
 ## 7. Audio Ontwerp
 
@@ -107,7 +104,7 @@ _Er wordt niet geaboneerd op een huidige event noch wordt er een aangemaakt._
 
 | Event                        | Richting        | Beschrijving                  |
 | ---------------------------- | --------------- | ----------------------------- |
-| _null_                       | _Null_          | _Null_                        |
+| _n.v.t._                     | _n.v.t._        | _n.v.t._                      |
 
 ### 8.3 Benodigde Scripts / Componenten
 
@@ -115,7 +112,7 @@ _n.v.t._
 
 | Script / Component   | Verantwoordelijkheid                   |
 | -------------------- | -------------------------------------- |
-| _Null_               | _Null_                                 |
+| _n.v.t._             | _n.v.t._                               |
 
 ### 8.4 Uitschakelbaar
 
@@ -152,7 +149,6 @@ _Wanneer is deze feature "af"? Verwijs ook naar de [Definition of Done](./Defini
 
 ## 11. Opmerkingen / Open Vragen
 
-_!Noteer hier eventuele openstaande vragen, risico's of afhankelijkheden._
-Omdat Wij niet weten welke scene's nog moeten worden toegevoegd kunnen wij deze nit in de menu zetten en moet dit later weer in aanvraag komen.
+Omdat Wij niet weten welke scene's nog moeten worden toegevoegd kunnen wij deze niet in de menu zetten en moet deze kwestie later weer in aanvraag komen.
 
 - _…_
