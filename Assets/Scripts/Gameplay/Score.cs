@@ -87,18 +87,15 @@ public class Score : MonoBehaviour
     {
         int addedScore = baseScore * scoreMultiplier;
         value += addedScore;
-        onGetScore?.Invoke((Vector2)bumper.position, addedScore);
+
+        onGetChromaScore?.Invoke((Vector2)bumper.position, addedScore);
+
         ShowScore();
 
-
-
-        //check highscore during play
         if (value > highscore)
         {
             onHighScoreBrokenAtPlay.Invoke();
         }
-
-
     }
 
     private void ShowChromaScore()
