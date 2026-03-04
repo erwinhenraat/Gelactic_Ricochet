@@ -1784,7 +1784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 682abb82dcb6ff7438e208fa546e619c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputType: 1
+  _inputType: 0
   _speed: 30
 --- !u!1 &502991665
 GameObject:
@@ -6431,7 +6431,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press  "FIRE"  to play !
+  m_text: Press  "FIRE"  to Return to menu !
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: caabc9be49dcbb34ab9a5d4d379a1c95, type: 2}
   m_sharedMaterial: {fileID: 433719321404842576, guid: caabc9be49dcbb34ab9a5d4d379a1c95, type: 2}
@@ -7083,7 +7083,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1612075289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7169,7 +7169,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gelactic  Ricochet
+  m_text: Game Over
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: caabc9be49dcbb34ab9a5d4d379a1c95, type: 2}
   m_sharedMaterial: {fileID: 433719321404842576, guid: caabc9be49dcbb34ab9a5d4d379a1c95, type: 2}
