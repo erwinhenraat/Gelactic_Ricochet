@@ -7,27 +7,27 @@
 
 ## 1. Overzicht
 
-| Veld             | Invullen                                      |
-| ---------------- | --------------------------------------------- |
-| **Feature Naam** | _RNG Bumper_                   |
-| **Auteur**       | _Mads Hoogeveen_                       |
-| **Datum**        | _3-3-2026_                                  |
-| **Versie**       | _1.0_                                         |
-| **Branch**       | `origin/feature/RNGbumper`                       |
-| **Status**       | ✅ Afgerond |
+| Veld             | Invullen                   |
+| ---------------- | -------------------------- |
+| **Feature Naam** | _RNG Bumper_               |
+| **Auteur**       | _Mads Hoogeveen_           |
+| **Datum**        | _3-3-2026_                 |
+| **Versie**       | _1.0_                      |
+| **Branch**       | `origin/feature/RNGbumper` |
+| **Status**       | ✅ Afgerond                |
 
 ---
 
 ## 2. User Story
 
->Als speler wil ik dat als de game begint dat er RNG bumpers zijn die de bal kan aanraken. 
-Als deze Bumper word aangeraakt word er een random waarde aan punten aan de speler gegeven.
+> Als speler wil ik dat als de game begint dat er RNG bumpers zijn die de bal kan aanraken.
+> Als deze Bumper word aangeraakt word er een random waarde aan punten aan de speler gegeven.
 
 ---
 
 ## 3. Beschrijving
 
-Deze feature bevat een RNG bumper prefab die er voor 
+Deze feature bevat een RNG bumper prefab die er voor
 zorgt als het balletje de bumper raakt, dat er dan een
 random aantal aan punten tussen bepaalde eenheden word gegeven aan de speler.
 
@@ -48,25 +48,25 @@ het directe resultaat is een random aantal aan punten dat aan de speler word geg
 
 _Geef aan welke bestaande systemen worden beïnvloed of aangevuld (bijv. Score, Combo, Lives, Multiplier, Input). Verwijs waar nodig naar het [Technisch Design](./TechnicalDesign.md)._
 
-| Bestaand Systeem   | Relatie / Impact               |
-| ------------------ | ------------------------------ |
-| Score              |  Random punten word aan de speler gegeven   
-| Combo / Multiplier |  De mulitplier word gebruikt voor de RNG bumper zodat de punten hiervan vermedigvuldigd kunnen worden |
-| Lives              |	geen invloed             
-| Input              |  geen invloed       
-| _Ander systeem_    |  geen invloed                          
+| Bestaand Systeem   | Relatie / Impact                                                                                     |
+| ------------------ | ---------------------------------------------------------------------------------------------------- |
+| Score              | Random punten word aan de speler gegeven                                                             |
+| Combo / Multiplier | De mulitplier word gebruikt voor de RNG bumper zodat de punten hiervan vermedigvuldigd kunnen worden |
+| Lives              | geen invloed                                                                                         |
+| Input              | geen invloed                                                                                         |
+| _Ander systeem_    | geen invloed                                                                                         |
 
 ### 4.3 Game Feel
 
 _Welke feedback krijgt de speler? Denk aan: screenshake, geluid, visuele effecten, UI-updates, animaties._
 
-| Feedback Type | Beschrijving                       |
-| ------------- | ---------------------------------- |
-| Visueel       | RNG bumper balletje met (?) Symbool 
-| Audio         | Reward geluidje           |
-| Screenshake   | geen invloed    
-| UI            | geen invloed       |
-| Animatie      | geen invloed            
+| Feedback Type | Beschrijving                        |
+| ------------- | ----------------------------------- |
+| Visueel       | RNG bumper balletje met (?) Symbool |
+| Audio         | Reward geluidje                     |
+| Screenshake   | geen invloed                        |
+| UI            | geen invloed                        |
+| Animatie      | geen invloed                        |
 
 ---
 
@@ -74,10 +74,9 @@ _Welke feedback krijgt de speler? Denk aan: screenshake, geluid, visuele effecte
 
 _Definieer de concrete spelregels en instelbare waarden voor deze feature._
 
-| Parameter            | Waarde  | Beschrijving                    |
-| -------------------- | ------- | ------------------------------- |
-| RNG Systeem		   | Random Nummer tussen 1-... | De RNG bumper prefab kan worden aangepast op basis van hoe laag en hoog de maximale en minmale random waarde is|
-
+| Parameter   | Waarde                     | Beschrijving                                                                                                    |
+| ----------- | -------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| RNG Systeem | Random Nummer tussen 1-... | De RNG bumper prefab kan worden aangepast op basis van hoe laag en hoog de maximale en minmale random waarde is |
 
 ---
 
@@ -90,8 +89,8 @@ https://cdn.discordapp.com/attachments/1316403516184723466/1478335161862062130/i
 ### Schetsen / Referenties
 
 > _Plaats hier afbeeldingen of links naar referentiemateriaal._
-https://media.discordapp.net/attachments/1316403516184723466/1478334991766130708/image.png?ex=69a80640&is=69a6b4c0&hm=161e7a2e2336a7949bf73db0ce5dd21b2db6e6e12dbda1cb81983e47633e8feb&=&format=webp&quality=lossless&width=81&height=84
-https://cdn.discordapp.com/attachments/1316403516184723466/1478335161862062130/image.png?ex=69a80668&is=69a6b4e8&hm=5a072585c88a09326c18247d725c3e3ad10f24ef1a81be751c2b1fac90864180&
+> https://media.discordapp.net/attachments/1316403516184723466/1478334991766130708/image.png?ex=69a80640&is=69a6b4c0&hm=161e7a2e2336a7949bf73db0ce5dd21b2db6e6e12dbda1cb81983e47633e8feb&=&format=webp&quality=lossless&width=81&height=84
+> https://cdn.discordapp.com/attachments/1316403516184723466/1478335161862062130/image.png?ex=69a80668&is=69a6b4e8&hm=5a072585c88a09326c18247d725c3e3ad10f24ef1a81be751c2b1fac90864180&
 
 ### Placeholder Art Beschrijving
 
@@ -103,9 +102,9 @@ al bestaande bumper
 
 _Welke geluiden zijn nodig? Beschrijf per geluid het gewenste karakter._
 
-| Geluid               | Beschrijving / Karakter            | Placeholder  |
-| -------------------- | ---------------------------------- | ------------ |
-| hit sound			   | appart geluid als je de rng bumper raakt           | ☐ Ja / ☐ Nee |
+| Geluid    | Beschrijving / Karakter                  | Placeholder  |
+| --------- | ---------------------------------------- | ------------ |
+| hit sound | appart geluid als je de rng bumper raakt | ☐ Ja / ☐ Nee |
 
 ---
 
@@ -137,15 +136,15 @@ _In welke laag van de architectuur past deze feature? (Input & Control / Interac
 
 _Welke nieuwe events worden aangemaakt? Op welke bestaande events wordt geabonneerd?_
 
-| Event                        | Richting        | Beschrijving                  |
-| ---------------------------- | --------------- | ----------------------------- |
-| On hit RNG bumper			   | Subscribe		 | Get a random score			 |
+| Event             | Richting  | Beschrijving       |
+| ----------------- | --------- | ------------------ |
+| On hit RNG bumper | Subscribe | Get a random score |
 
 ### 8.3 Benodigde Scripts / Componenten
 
-| Script / Component   | Verantwoordelijkheid                   |
-| -------------------- | -------------------------------------- |
-| RNGBumper.cs		   | Detectie collision, activeren effect   |
+| Script / Component | Verantwoordelijkheid                 |
+| ------------------ | ------------------------------------ |
+| RNGBumper.cs       | Detectie collision, activeren effect |
 
 ### 8.4 Uitschakelbaar
 
@@ -157,31 +156,30 @@ als de RNG bumpers wodern uigeschakeld kan het spel nog steeds gespeeld worden m
 
 _Maak een concrete checklist van alle taken die nodig zijn om deze feature te implementeren._
 
-- [ x] Game design document invullen en reviewen
-- [ ] Placeholder art maken / verzamelen
-- [ x] Placeholder audio maken / verzamelen
-- [X] Script(s) aanmaken en implementeren
-- [ x] Events koppelen aan bestaande systemen
-- [ x] UI elementen toevoegen
-- [ x] Feature testen op bugs
+- [x] Game design document invullen en reviewen
+- [x] Placeholder art maken / verzamelen
+- [x] Placeholder audio maken / verzamelen
+- [x] Script(s) aanmaken en implementeren
+- [x] Events koppelen aan bestaande systemen
+- [x] UI elementen toevoegen
+- [x] Feature testen op bugs
 - [ ] Usertest uitvoeren (min. 3 spelers)
 - [ ] Usertest documentatie schrijven (`Usertest_[FeatureNaam].md`)
-- [ x] Technisch design document updaten
-- [ x] Code review / pull request aanmaken
-
+- [x] Technisch design document updaten
+- [x] Code review / pull request aanmaken
 
 ## 10. Acceptatiecriteria
 
 _Wanneer is deze feature "af"? Verwijs ook naar de [Definition of Done](./DefinitionOfDone.md)._
 
-- [x ] De user story is volledig geïmplementeerd
+- [x] De user story is volledig geïmplementeerd
 - [ ] Alle parameters zijn instelbaar via de Unity Inspector
-- [x ] De feature is uitschakelbaar zonder bugs
-- [x ] Alle placeholder art/audio is aanwezig
+- [x] De feature is uitschakelbaar zonder bugs
+- [x] Alle placeholder art/audio is aanwezig
 - [ ] Usertest is afgerond en gedocumenteerd
-- [x ] Geen errors of bugs in test build
-- [x ] Technisch design document is bijgewerkt
-- [x ] Pull request is goedgekeurd en gemerged naar `development`
+- [x] Geen errors of bugs in test build
+- [x] Technisch design document is bijgewerkt
+- [ ] Pull request is goedgekeurd en gemerged naar `development`
 
 ## 11. Opmerkingen / Open Vragen
 
