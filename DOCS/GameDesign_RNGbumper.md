@@ -89,7 +89,7 @@ https://cdn.discordapp.com/attachments/1316403516184723466/1478335161862062130/i
 ### Schetsen / Referenties
 
 > _Plaats hier afbeeldingen of links naar referentiemateriaal._
-lightrainbowRNGbumper.png
+[lightrainbowRNGbumper.png](https://github.com/erwinhenraat/Galactic_Ricochet/blob/9b7ce014c88d6c4d54e9210f5ee047a766e8fffe/purpleRNGbumper.png)
 
 ### Placeholder Art Beschrijving
 
