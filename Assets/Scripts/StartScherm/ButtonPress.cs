@@ -5,7 +5,7 @@ public class ButtonPress : MonoBehaviour
 {
     public void SceneChanger()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene((int)Scenes.Main);
     }
 
 }
