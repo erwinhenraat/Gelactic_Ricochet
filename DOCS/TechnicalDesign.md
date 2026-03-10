@@ -1,4 +1,4 @@
-# Galactic Ricochet - Technische Documentatie
+# Galactic Ricochet - Technische Documentatie mads
 
 ## Inhoudsopgave
 
@@ -452,6 +452,22 @@ classDiagram
 
 ---
 
+#### 13. **ExtraBall Events** (Extra Leven)
+
+| Event         | Type             | Argumenten     | Beschrijving             |
+| ------------- | ---------------- | -------------- | ------------------------ |
+| `RNGbumpers`  | `Action<Transform, int>` | `random int` | get a random score       |
+
+**Subscribers:**
+
+- `Combo.OnhitRNGbumper()`
+- `PlaySounds.PlayRNGbumper()`
+- `ScorePop.ChromaPop`
+- `Score.OnGetChromaScore`
+
+---
+
+
 ### Event-Flow Diagram
 
 ```mermaid
@@ -859,3 +875,4 @@ Deze geluiden worden getriggerd door Action Events.
 - Screenshake: `shakeTime`, `shakeForce` per event type (`Shake`&`Tremble`) moet in de code aangepast worden om de screenshake timing te tweaken.
 
 ---
+

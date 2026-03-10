@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class PlaySounds : MonoBehaviour
 {
-    public enum SoundType { Bumper, Combo, GameOver, ExtraBall, BallLost, Loadup }
+    public enum SoundType { Bumper, Combo, GameOver, ExtraBall, BallLost, Loadup, RNGBumper }
 
     private Dictionary<SoundType, AudioSource> soundSources = new Dictionary<SoundType, AudioSource>();
 
@@ -12,9 +12,9 @@ public class PlaySounds : MonoBehaviour
         // Initialize all audio sources from components
         AudioSource[] sources = GetComponents<AudioSource>();
 
-        if (sources.Length < 6)
+        if (sources.Length < 7)
         {
-            Debug.LogError("PlaySounds requires 6 AudioSource components!");
+            Debug.LogError("PlaySounds requires 7 AudioSource components!");
             return;
         }
 
@@ -24,6 +24,7 @@ public class PlaySounds : MonoBehaviour
         soundSources[SoundType.ExtraBall] = sources[3];
         soundSources[SoundType.BallLost] = sources[4];
         soundSources[SoundType.Loadup] = sources[5];
+        soundSources[SoundType.RNGBumper] = sources[6];
 
         HitBumper.onHitBumper += PlayBumper;
         Combo.onComboAchieved += PlayCombo;
@@ -32,6 +33,7 @@ public class PlaySounds : MonoBehaviour
         PlayArea.onBallLost += PlayBallLost;
         Shoot.onPress += PlayLoadup;
         Shoot.onRelease += StopLoadup;
+        RNGHitBumper.onHitRNGBumper += PlayRNGBumper;
     }
 
     private void OnDisable()
@@ -43,7 +45,15 @@ public class PlaySounds : MonoBehaviour
         PlayArea.onBallLost -= PlayBallLost;
         Shoot.onPress -= PlayLoadup;
         Shoot.onRelease -= StopLoadup;
+        RNGHitBumper.onHitRNGBumper -= PlayRNGBumper;
     }
+
+    private void PlayRNGBumper(Transform _, int __)
+    {
+        soundSources[SoundType.RNGBumper].pitch = Random.Range(0.5f, 1.5f);
+        soundSources[SoundType.RNGBumper].Play();
+    }
+
 
     private void PlayBumper(Transform _, int __)
     {
