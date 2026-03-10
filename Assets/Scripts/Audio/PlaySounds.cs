@@ -1,30 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Splines;
 
 public class PlaySounds : MonoBehaviour
 {
-    public enum SoundType { Bumper, Combo, GameOver, ExtraBall, BallLost, Loadup }
-
-    private Dictionary<SoundType, AudioSource> soundSources = new Dictionary<SoundType, AudioSource>();
-
+    private AudioSource[] sources = new AudioSource[4];
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Initialize all audio sources from components
-        AudioSource[] sources = GetComponents<AudioSource>();
-
-        if (sources.Length < 6)
-        {
-            Debug.LogError("PlaySounds requires 6 AudioSource components!");
-            return;
-        }
-
-        soundSources[SoundType.Bumper] = sources[0];
-        soundSources[SoundType.Combo] = sources[1];
-        soundSources[SoundType.GameOver] = sources[2];
-        soundSources[SoundType.ExtraBall] = sources[3];
-        soundSources[SoundType.BallLost] = sources[4];
-        soundSources[SoundType.Loadup] = sources[5];
-
         HitBumper.onHitBumper += PlayBumper;
         Combo.onComboAchieved += PlayCombo;
         Lives.onGameOver += PlayGameOver;
@@ -32,8 +15,12 @@ public class PlaySounds : MonoBehaviour
         PlayArea.onBallLost += PlayBallLost;
         Shoot.onPress += PlayLoadup;
         Shoot.onRelease += StopLoadup;
-    }
+        BallController.onRailPlaySound += PlayRailEnter;
+        BallController.onRailPlaySound += PlayRailRoll;
+        BallController.onRailStopSound += StopRailRoll;
+        sources = GetComponents<AudioSource>();
 
+    }
     private void OnDisable()
     {
         HitBumper.onHitBumper -= PlayBumper;
@@ -43,42 +30,51 @@ public class PlaySounds : MonoBehaviour
         PlayArea.onBallLost -= PlayBallLost;
         Shoot.onPress -= PlayLoadup;
         Shoot.onRelease -= StopLoadup;
+        BallController.onRailPlaySound -= PlayRailEnter;
+        BallController.onRailPlaySound -= PlayRailRoll;
+        BallController.onRailStopSound -= StopRailRoll;
     }
-
     private void PlayBumper(Transform _, int __)
     {
-        soundSources[SoundType.Bumper].pitch = Random.Range(0.5f, 1.5f);
-        soundSources[SoundType.Bumper].Play();
-    }
+        sources[0].pitch = Random.Range(0.5f, 1.5f);
+        sources[0].Play();
 
+    }
     private void PlayCombo(int value, string _)
     {
-        soundSources[SoundType.Combo].pitch = 1 + value / 10;
-        soundSources[SoundType.Combo].Play();
+        sources[1].pitch = 1 + value / 10;
+        sources[1].Play();
     }
-
     private void PlayGameOver(string _)
     {
-        soundSources[SoundType.GameOver].Play();
+        sources[2].Play();
     }
-
     private void PlayExtraBall(string _)
     {
-        soundSources[SoundType.ExtraBall].Play();
+        sources[3].Play();
     }
-
     private void PlayBallLost()
     {
-        soundSources[SoundType.BallLost].Play();
+        sources[4].Play();
     }
-
     private void PlayLoadup()
     {
-        soundSources[SoundType.Loadup].Play();
+        sources[5].Play();
     }
-
     private void StopLoadup()
     {
-        soundSources[SoundType.Loadup].Stop();
+        sources[5].Stop();
+    }
+    private void PlayRailEnter(bool bl)
+    {
+        sources[6].Play();
+    }
+    private void PlayRailRoll(bool bl)
+    {
+        sources[7].Play();
+    }
+    private void StopRailRoll(bool bl)
+    {
+        sources[7].Stop();
     }
 }
