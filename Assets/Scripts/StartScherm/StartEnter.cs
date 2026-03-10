@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class StartEnter : MonoBehaviour
 {
-    [SerializeField] private GameObject thisObject;
     [SerializeField] private GameObject levelMenu;
 
     private float timer = 0f;
@@ -15,7 +14,7 @@ public class StartEnter : MonoBehaviour
         CanvasGroup = GetComponent<CanvasGroup>();
 
         levelMenu.SetActive(false);
-        thisObject.SetActive(true);
+        gameObject.SetActive(true);
     }
 
     void Update()
@@ -48,7 +47,7 @@ public class StartEnter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.JoystickButton7))
         { 
             levelMenu.SetActive(true);
-            thisObject.SetActive(false);
+            gameObject.SetActive(false);
         }
  
     }
