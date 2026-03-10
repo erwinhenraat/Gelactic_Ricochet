@@ -84,12 +84,14 @@ _Definieer de concrete spelregels en instelbare waarden voor deze feature._
 
 _Voeg schetsen, wireframes, of referentiebeelden toe. Beschrijf de gewenste look & feel._
 
-https://cdn.discordapp.com/attachments/1316403516184723466/1478335161862062130/image.png?ex=69a80668&is=69a6b4e8&hm=5a072585c88a09326c18247d725c3e3ad10f24ef1a81be751c2b1fac90864180&
+[https://cdn.discordapp.com/attachments/1316403516184723466/1478335161862062130/image.png?ex=69a80668&is=69a6b4e8&hm=5a072585c88a09326c18247d725c3e3ad10f24ef1a81be751c2b1fac90864180&](https://github.com/erwinhenraat/Galactic_Ricochet/blob/bf518f4c89d1f5be3ccfd961db4c0917fe035a38/lightrainbowRNGbumper.png)
 
 ### Schetsen / Referenties
 
 > _Plaats hier afbeeldingen of links naar referentiemateriaal._
+
 [lightrainbowRNGbumper.png](https://github.com/erwinhenraat/Galactic_Ricochet/blob/9b7ce014c88d6c4d54e9210f5ee047a766e8fffe/purpleRNGbumper.png)
+> https://github.com/erwinhenraat/Galactic_Ricochet/blob/bf518f4c89d1f5be3ccfd961db4c0917fe035a38/lightrainbowRNGbumper.png
 
 ### Placeholder Art Beschrijving
 
