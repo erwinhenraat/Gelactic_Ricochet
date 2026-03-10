@@ -89,8 +89,7 @@ https://cdn.discordapp.com/attachments/1316403516184723466/1478335161862062130/i
 ### Schetsen / Referenties
 
 > _Plaats hier afbeeldingen of links naar referentiemateriaal._
-> https://media.discordapp.net/attachments/1316403516184723466/1478334991766130708/image.png?ex=69a80640&is=69a6b4c0&hm=161e7a2e2336a7949bf73db0ce5dd21b2db6e6e12dbda1cb81983e47633e8feb&=&format=webp&quality=lossless&width=81&height=84
-> https://cdn.discordapp.com/attachments/1316403516184723466/1478335161862062130/image.png?ex=69a80668&is=69a6b4e8&hm=5a072585c88a09326c18247d725c3e3ad10f24ef1a81be751c2b1fac90864180&
+lightrainbowRNGbumper.png
 
 ### Placeholder Art Beschrijving
 
