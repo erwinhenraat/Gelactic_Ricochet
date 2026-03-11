@@ -83,7 +83,7 @@ public class Score : MonoBehaviour
 
     }
 
-    private void GetChromaScore(Transform bumper, int baseScore)
+        private void GetChromaScore(Transform bumper, int baseScore)
     {
         int addedScore = baseScore * scoreMultiplier;
         value += addedScore;
