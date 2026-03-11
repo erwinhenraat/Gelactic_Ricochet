@@ -8,7 +8,7 @@
 | **Auteur**       | Ellie                                         |
 | **Datum**        | 10/3/2026                                     |
 | **Versie**       | 1.0                                           |
-| **Branch**       | Rails/rails                                   |
+| **Branch**       | feature/rails                                   |
 | **Status**       | ✅Afgerond                                   |
 
 ---
