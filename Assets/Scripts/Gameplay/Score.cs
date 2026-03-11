@@ -16,9 +16,6 @@ public class Score : MonoBehaviour
     private int highscore;    
     public TMP_Text highScoreField;
 
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         HitBumper.onHitBumper += GetScore;
@@ -30,78 +27,90 @@ public class Score : MonoBehaviour
 
         RetreiveHighScore();
     }
+
     private void OnDisable()
     {
         HitBumper.onHitBumper -= GetScore;
         Multiplier.onMultiplierUpdate -= SetMultiplier;
         Lives.onGameOver -= CheckForHighScore;
         SelectInitials.onInitialsSubmitted -= SaveHighScore;
-        
-
     }
-    private void RetreiveHighScore() {
-        //get highscore
+
+    private void RetreiveHighScore()
+    {
         highscore = PlayerPrefs.GetInt("highscore");
         string holder = PlayerPrefs.GetString("holder");
         highScoreField.text = $"Highest by {holder} : {highscore}";
     }
+
     private void Update()
     {
        ResetHighScore();
     }
-    private void ResetHighScore() {
-        if (Input.GetKeyDown(KeyCode.Backspace) )
+
+    private void ResetHighScore()
+    {
+        if (Input.GetKeyDown(KeyCode.Backspace))
         {
             Debug.LogWarning("Resetting Highscore!!");
             highscore = 0;
             highScoreField.text = $" ";
-            PlayerPrefs.SetInt("highscore", 0);//254110
-            //PlayerPrefs.SetString("holder", "SPE");
+            PlayerPrefs.SetInt("highscore", 0);
         }
     }
 
-   
-
-    private void GetScore(Transform bumper , int baseScore) {
+    private void GetScore(Transform bumper , int baseScore)
+    {
         int addedScore = baseScore * scoreMultiplier;
+
+        // Check if the current ball is a Super Ball
+        GameObject ball = GameObject.FindGameObjectWithTag("Ball");
+
+        if (ball != null)
+        {
+            SuperBallMarker sb = ball.GetComponent<SuperBallMarker>();
+
+            if (sb != null && sb.IsSuperBall)
+            {
+                Debug.Log("[Score] Super Ball detected → applying 100x bonus");
+                addedScore *= 100;
+            }
+        }
+
         value += addedScore;
+
         onGetScore?.Invoke((Vector2)bumper.position, addedScore);
+
         ShowScore();
         
-        //check highscore during play
-        if (value > highscore) { 
-            onHighScoreBrokenAtPlay.Invoke();
+        if (value > highscore)
+        { 
+            onHighScoreBrokenAtPlay?.Invoke();
         }
-        
+    }
 
+    private void ShowScore()
+    { 
+        textfield.text = "Score : " + value.ToString();
     }
-    private void ShowScore() { 
-        textfield.text = "Score : "+value.ToString();
-    }
-    private void SetMultiplier(int value) { 
+
+    private void SetMultiplier(int value)
+    { 
         scoreMultiplier = value;
     }
+
     private void CheckForHighScore(string _)
     {
-
-        //Debug.Log($"checking highscore score:{value} -- high{highscore}");
-        //check only on game over!
         if (value > highscore)
         {
-            //Debug.Log("highscore found");
             highscore = value;
-            
             onSaveNewHighscore?.Invoke(highscore);
-         
         }
-
     }
-    private void SaveHighScore(string holder) {
-        //save highscore
-        //Debug.Log("saving highscore");
+
+    private void SaveHighScore(string holder)
+    {
         PlayerPrefs.SetInt("highscore", highscore);
         PlayerPrefs.SetString("holder", holder);
-
-
     }
 }

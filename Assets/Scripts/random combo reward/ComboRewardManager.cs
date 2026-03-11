@@ -42,13 +42,25 @@ public class ComboRewardManager : MonoBehaviour
     {
         Debug.Log($"[ComboRewardManager] Combo achieved: {comboLevel}, Tag: {tag}");
 
+        // Collect all rewards that match this combo level
+        List<IComboReward> possibleRewards = new();
+
         foreach (var reward in rewards)
         {
             if (comboLevel == reward.RequiredCombo)
             {
-                Debug.Log($"[ComboRewardManager] Activating reward at combo {comboLevel}");
-                reward.ActivateReward(tag);
+                possibleRewards.Add(reward);
             }
+        }
+
+        // If any rewards exist, pick one randomly
+        if (possibleRewards.Count > 0)
+        {
+            int randomIndex = Random.Range(0, possibleRewards.Count);
+            IComboReward chosenReward = possibleRewards[randomIndex];
+
+            Debug.Log($"[ComboRewardManager] Random reward chosen: {chosenReward}");
+            chosenReward.ActivateReward(tag);
         }
     }
 
