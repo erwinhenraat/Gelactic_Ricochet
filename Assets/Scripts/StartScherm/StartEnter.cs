@@ -6,7 +6,6 @@ public class StartEnter : MonoBehaviour
     [SerializeField] private GameObject levelMenu;
 
     private float timer = 0f;
-    private bool visib;
     private CanvasGroup CanvasGroup;
 
     void Start()
@@ -27,17 +26,15 @@ public class StartEnter : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > 1 && !visib)
+        if (timer > 1 && CanvasGroup.alpha == 1f)
         {
-            timer = 0;
-            visib = true;
             CanvasGroup.alpha = 0f;
+            timer = 0;
         }
 
-        if (timer > 1 && visib)
+        if (timer > 1 && CanvasGroup.alpha == 0f)
         {
             CanvasGroup.alpha = 1f;
-            visib = false;
             timer = 0;
         }
     }
