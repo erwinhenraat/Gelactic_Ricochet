@@ -21,6 +21,7 @@ public class Lives : MonoBehaviour
         shotsLeft = lives;
 
         PlayArea.onBallLost += LoseLife;
+        HazardObject.onBallDestroyed += LoseLife;
         Shoot.onShootNewBall += LoseShot;
         ExtraBall.onExtraBall += AddShotAndLife;
        
@@ -29,6 +30,7 @@ public class Lives : MonoBehaviour
     private void OnDisable()
     {       
         PlayArea.onBallLost -= LoseLife;
+        HazardObject.onBallDestroyed -= LoseLife;
         Shoot.onShootNewBall -= LoseShot;
         ExtraBall.onExtraBall -= AddShotAndLife;
     }

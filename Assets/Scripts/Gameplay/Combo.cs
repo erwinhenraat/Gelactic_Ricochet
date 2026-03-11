@@ -12,12 +12,14 @@ public class Combo : MonoBehaviour
     void Start()
     {
         HitBumper.onHitBumper += CheckForCombo;
-        PlayArea.onBallLost += ResetCombo;        
+        PlayArea.onBallLost += ResetCombo;
+        HazardObject.onBallDestroyed += ResetCombo;
     }
     private void OnDisable()
     {
         HitBumper.onHitBumper -= CheckForCombo;
         PlayArea.onBallLost -= ResetCombo;
+        HazardObject.onBallDestroyed -= ResetCombo;
     }
     private void ResetCombo()
     {
