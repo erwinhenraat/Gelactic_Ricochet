@@ -34,9 +34,9 @@ public class PlaySounds : MonoBehaviour
         PlayArea.onBallLost += PlayBallLost;
         Shoot.onPress += PlayLoadup;
         Shoot.onRelease += StopLoadup;
-        BallController.onRailPlaySound += PlayRailEnter;
-        BallController.onRailPlaySound += PlayRailRoll;
-        BallController.onRailStopSound += StopRailRoll;
+        BallToRailConnector.onRailPlaySound += PlayRailEnter;
+        BallToRailConnector.onRailPlaySound += PlayRailRoll;
+        BallToRailConnector.onRailStopSound += StopRailRoll;
         sources = GetComponents<AudioSource>();
 
     }
@@ -49,9 +49,9 @@ public class PlaySounds : MonoBehaviour
         PlayArea.onBallLost -= PlayBallLost;
         Shoot.onPress -= PlayLoadup;
         Shoot.onRelease -= StopLoadup;
-        BallController.onRailPlaySound -= PlayRailEnter;
-        BallController.onRailPlaySound -= PlayRailRoll;
-        BallController.onRailStopSound -= StopRailRoll;
+        BallToRailConnector.onRailPlaySound -= PlayRailEnter;
+        BallToRailConnector.onRailPlaySound -= PlayRailRoll;
+        BallToRailConnector.onRailStopSound -= StopRailRoll;
     }
     private void PlayBumper(Transform _, int __)
     {

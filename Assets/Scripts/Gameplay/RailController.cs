@@ -37,7 +37,7 @@ public class RailController : MonoBehaviour
         {
             Vector3 pointLast = spline.Spline.ToArray()[spline.Spline.Count - 1].Position;
             Vector3 pointSecondToLast = spline.Spline.ToArray()[spline.Spline.Count - 2].Position;
-            col.gameObject.GetComponent<BallController>().onIsOnRail.Invoke(this.GetComponent<SplineContainer>(),(pointLast-pointSecondToLast).normalized);
+            col.gameObject.GetComponent<BallToRailConnector>().onIsOnRail.Invoke(this.GetComponent<SplineContainer>(),(pointLast-pointSecondToLast).normalized);
             hasSeenBall = true;
         }
         if (col == null || col.CompareTag("Ball") == false)

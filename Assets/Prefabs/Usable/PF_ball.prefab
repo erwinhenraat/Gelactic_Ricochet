@@ -4858,8 +4858,8 @@ GameObject:
   - component: {fileID: 6372009104447450130}
   - component: {fileID: 4313585339772777499}
   - component: {fileID: 3642255300650349654}
-  - component: {fileID: 7321940008122704107}
   - component: {fileID: 8035632864256433553}
+  - component: {fileID: 89831098221335635}
   m_Layer: 0
   m_Name: PF_ball
   m_TagString: Ball
@@ -5124,19 +5124,6 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 0
---- !u!114 &7321940008122704107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2262322401148545871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf6c0868d0971e6459cc9faf98bc685a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BallController
-  trailParticles: {fileID: 4947097884704793910}
 --- !u!114 &8035632864256433553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5160,6 +5147,20 @@ MonoBehaviour:
   m_ObjectForwardAxis: 2
   m_ObjectUpAxis: 1
   m_StartOffset: 0
+--- !u!114 &89831098221335635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2262322401148545871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf6c0868d0971e6459cc9faf98bc685a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BallController
+  trailParticles: {fileID: 4947097884704793910}
+  isOnRail: 0
 --- !u!1 &4807515093977324678
 GameObject:
   m_ObjectHideFlags: 0

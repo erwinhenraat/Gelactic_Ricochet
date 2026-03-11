@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Splines;
 
-public class BallController : MonoBehaviour
+public class BallToRailConnector : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Collider2D col;
