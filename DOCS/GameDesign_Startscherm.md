@@ -66,7 +66,7 @@ _Feedback die de speler krijgt van onze mechanic._
 
 ### Schetsen / Referenties
 
-> [Inpsiratie van de layout van de Startscherm](arcadeStart.png)
+> [Inpsiratie van de layout van de Startscherm](./DOCS_Content/arcadeStart.png)
 
 ## 7. Audio Ontwerp
 
