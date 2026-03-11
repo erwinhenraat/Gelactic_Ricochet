@@ -4,10 +4,29 @@ using UnityEngine.Splines;
 
 public class PlaySounds : MonoBehaviour
 {
-    private AudioSource[] sources = new AudioSource[4];
+    public enum SoundType { Bumper, Combo, GameOver, ExtraBall, BallLost, Loadup, RailEnter, RailRoll }
+
+    private Dictionary<SoundType, AudioSource> soundSources = new Dictionary<SoundType, AudioSource>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        AudioSource[] sources = GetComponents<AudioSource>();
+
+        if (sources.Length < 8)
+        {
+            Debug.LogError("PlaySounds requires 6 AudioSource components!");
+            return;
+        }
+
+        soundSources[SoundType.Bumper] = sources[0];
+        soundSources[SoundType.Combo] = sources[1];
+        soundSources[SoundType.GameOver] = sources[2];
+        soundSources[SoundType.ExtraBall] = sources[3];
+        soundSources[SoundType.BallLost] = sources[4];
+        soundSources[SoundType.Loadup] = sources[5];
+        soundSources[SoundType.RailEnter] = sources[6];
+        soundSources[SoundType.RailRoll] = sources[7];
+
         HitBumper.onHitBumper += PlayBumper;
         Combo.onComboAchieved += PlayCombo;
         Lives.onGameOver += PlayGameOver;
@@ -36,45 +55,48 @@ public class PlaySounds : MonoBehaviour
     }
     private void PlayBumper(Transform _, int __)
     {
-        sources[0].pitch = Random.Range(0.5f, 1.5f);
-        sources[0].Play();
+        soundSources[SoundType.Bumper].pitch = Random.Range(0.5f, 1.5f);
+        soundSources[SoundType.Bumper].Play();
 
     }
     private void PlayCombo(int value, string _)
     {
-        sources[1].pitch = 1 + value / 10;
-        sources[1].Play();
+        soundSources[SoundType.Combo].pitch = 1 + value / 10;
+        soundSources[SoundType.Combo].Play();
     }
     private void PlayGameOver(string _)
     {
-        sources[2].Play();
+        soundSources[SoundType.GameOver].Play();
     }
     private void PlayExtraBall(string _)
     {
-        sources[3].Play();
+        soundSources[SoundType.ExtraBall].Play();
     }
+
     private void PlayBallLost()
     {
-        sources[4].Play();
+        soundSources[SoundType.BallLost].Play();
     }
+
     private void PlayLoadup()
     {
-        sources[5].Play();
+        soundSources[SoundType.Loadup].Play();
     }
+
     private void StopLoadup()
     {
-        sources[5].Stop();
+        soundSources[SoundType.Loadup].Stop();
     }
     private void PlayRailEnter(bool bl)
     {
-        sources[6].Play();
+        soundSources[SoundType.RailEnter].Play();
     }
     private void PlayRailRoll(bool bl)
     {
-        sources[7].Play();
+        soundSources[SoundType.RailRoll].Play();
     }
     private void StopRailRoll(bool bl)
     {
-        sources[7].Stop();
+        soundSources[SoundType.RailRoll].Stop();
     }
 }
