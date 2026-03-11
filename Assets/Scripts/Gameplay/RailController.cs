@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.Splines;
-using System;
-using Unity.VisualScripting;
 
 public class RailController : MonoBehaviour
 {

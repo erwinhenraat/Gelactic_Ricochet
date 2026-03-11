@@ -19,7 +19,7 @@ public class BallToRailConnector : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         sa = GetComponent<SplineAnimate>();
-        onIsOnRail += SetupRail;
+        onIsOnRail += SetupRailFollow;
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class BallToRailConnector : MonoBehaviour
 
     }
 
-    private void SetupRail(SplineContainer spl,Vector2 shootDir)
+    private void SetupRailFollow(SplineContainer spl,Vector2 shootDir)
     {
         isOnRail = true;
         fireDirection = shootDir;
@@ -59,5 +59,6 @@ public class BallToRailConnector : MonoBehaviour
         rb.linearVelocity = Vector3.zero;
         rb.AddForce(fireDirection * sa.MaxSpeed, ForceMode2D.Impulse);
         onRailStopSound.Invoke(true);
+        sa.Completed -= ResetIsOnRail;
     }
 }
