@@ -17,7 +17,7 @@
 
 ## 2. User Story
 
-> Als player wil ik een startscherm waar ik de levels kan selecten en niet gelijk in de game gegooid wordt.
+> Als player wil ik een startscherm waar ik de levels kan selecteren en niet gelijk in de game gegooid wordt.
 
 ---
 
@@ -31,15 +31,15 @@ Deze feature voegt een startscherm toe die je krijgt te zien als je de game opst
 
 ### 4.1 Kernmechanisme
 
-Deze feature maakt het zo dat de speler een zogenaamde _landing page_ heeft. Via deze _Landing page_ kan de speler een menu openen waar die uit een of meerdere _Levels_ kan kiezen. Als de speler een keuze maakt kan de speler op de knop drukken van de gecorreleerde _Level_, wordt de speler verwijsd naar de correcte scene waarin die _Level_ zich bevindt.
+Deze feature maakt het zo dat de speler een zogenaamde _landing page_ heeft. Via deze _Landing page_ kan de speler een menu openen waar die uit een of meerdere _Levels_ kan kiezen. Als de speler een keuze maakt kan de speler op de knop drukken van de gecorreleerde _Level_, daarna wordt de speler verwijsd naar de correcte scene waarin die _Level_ zich bevindt.
 
 ### 4.2 Relatie met bestaande systemen
 
 Deze feature interacteert niet met bestaande systemen.
 
-| Bestaand Systeem   | Relatie / Impact               |
-| ------------------ | ------------------------------ |
-| _n.v.t._           | _n.v.t._                       |
+| Bestaand Systeem   | Relatie / Impact                                                |
+| ------------------ | --------------------------------------------------------------- |
+| Restart.cs         | Als de game eindigt wordt je teruggestuurt naar de startscherm. |
 
 ### 4.3 Game Feel
 
@@ -49,7 +49,7 @@ _Feedback die de speler krijgt van onze mechanic._
 | ------------- | -------------------------------------------|
 | Visueel       | _Thematische visualisatie van componenten_ |
 | UI            | _Knop & menu voor levels_                  |
-| Animatie      | _color-transitie van button-text_          |
+| Animatie      | _opacity-transitie van button-text_        |
 
 ---
 
@@ -66,7 +66,7 @@ _Feedback die de speler krijgt van onze mechanic._
 
 ### Schetsen / Referenties
 
-> [Inpsiratie van de layout van de Startscherm](./../readMe_Content/arcadeStart.png)
+> [Inpsiratie van de layout van de Startscherm](./DOCS_Content/arcadeStart.png)
 
 ## 7. Audio Ontwerp
 
@@ -87,7 +87,7 @@ _Audio die gebruikt wordt in de mechanic._
 │   Feedback Layer                    │  ✅
 │   (UI, Visuals, Sound)              │
 ├─────────────────────────────────────┤
-│   Game Logic Layer                  │  ☐
+│   Game Logic Layer                  │  ✅
 │   (Scoring, Lives, Combos)          │
 ├─────────────────────────────────────┤
 │   Interaction Layer                 │  ☐
@@ -102,21 +102,25 @@ _Audio die gebruikt wordt in de mechanic._
 
 _Er wordt niet geaboneerd op een huidige event noch wordt er een aangemaakt._
 
-| Event                        | Richting        | Beschrijving                  |
-| ---------------------------- | --------------- | ----------------------------- |
-| _n.v.t._                     | _n.v.t._        | _n.v.t._                      |
+| Event                        | Richting        | Beschrijving                                        |
+| ---------------------------- | --------------- | --------------------------------------------------- |
+| onReadyToRestart             | subscribe       | listens for when player runs out of lives           |
+| onPressFire1                 | subscribe       | Listens if 'fire' is pressed                        |
+| onGameOver                   | unsubscribe     | prevents two similar text-popups displaying at once |
 
 ### 8.3 Benodigde Scripts / Componenten
 
-_n.v.t._
-
-| Script / Component   | Verantwoordelijkheid                   |
-| -------------------- | -------------------------------------- |
-| _n.v.t._             | _n.v.t._                               |
+| Script / Component   | Verantwoordelijkheid                             |
+| -------------------- | ------------------------------------------------ |
+| ButtonPress.cs       | Transitions scene when pressed.                  |
+| StartEnter.cs        | controls UI in startscreen                       |
+| Scenes.cs            | prevents scenes being coupled with magic numbers |
+| Restart.cs           | Transitions scene when game finishes             |
+| Scorepop.cs          | Shows floating text feedback                     |
 
 ### 8.4 Uitschakelbaar
 
-_Als we de game willen laten runnen zonder deze feature moeten wij der voor zorgen dat de build start op de game-scene en niet de start-scene. Om dit te doen moeten we de game-scene annduiden als scene-0 in de Unity editor **voor** de creatie van de build._
+Als we de game willen laten runnen zonder deze feature moeten wij der voor zorgen dat in _Restart.cs_ op lijn 46, dat _SceneManager.LoadScene((int)Scenes.Start);_ vervangt wordt met  _SceneManager.LoadScene((int)Scenes.Main)_.
 
 ---
 
@@ -129,7 +133,7 @@ _Als we de game willen laten runnen zonder deze feature moeten wij der voor zorg
 - [✅] Usertest uitvoeren (min. 3 spelers)
 - [ ] Usertest documentatie schrijven (`Usertest_[FeatureNaam].md`)
 - [✅] Alle documentatie dubbelchecken
-- [ ] Code review / pull request aanmaken
+- [✅] Code review / pull request aanmaken
 
 ---
 
