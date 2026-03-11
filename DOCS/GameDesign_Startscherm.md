@@ -35,8 +35,6 @@ Deze feature maakt het zo dat de speler een zogenaamde _landing page_ heeft. Via
 
 ### 4.2 Relatie met bestaande systemen
 
-Deze feature interacteert niet met bestaande systemen.
-
 | Bestaand Systeem   | Relatie / Impact                                                |
 | ------------------ | --------------------------------------------------------------- |
 | Restart.cs         | Als de game eindigt wordt je teruggestuurt naar de startscherm. |
@@ -55,10 +53,9 @@ _Feedback die de speler krijgt van onze mechanic._
 
 ## 5. Regels & Parameters
 
-| Parameter            | Waarde  | Beschrijving                              |
-| -------------------- | ------- | ----------------------------------------  |
-| Timer                | 0 sec   | zet bool _visib != visib_ als _timer = 1_ |
-| Visib                | true    | Als true zet tekst visible ander invisible|
+| Parameter            | Waarde  | Beschrijving                                                                                          |
+| -------------------- | ------- | ----------------------------------------------------------------------------------------------------- |
+| Timer                | 0 sec   | als de timer een bepaald raakt verandert hij de _alpha_ van de start-tekst en reset de timer zichzelf |
 
 ---
 
@@ -99,8 +96,6 @@ _Audio die gebruikt wordt in de mechanic._
 ```
 
 ### 8.2 Benodigde Events
-
-_Er wordt niet geaboneerd op een huidige event noch wordt er een aangemaakt._
 
 | Event                        | Richting        | Beschrijving                                        |
 | ---------------------------- | --------------- | --------------------------------------------------- |
