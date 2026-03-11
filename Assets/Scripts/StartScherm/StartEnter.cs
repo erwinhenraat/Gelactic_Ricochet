@@ -26,17 +26,9 @@ public class StartEnter : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > 1 && CanvasGroup.alpha == 1f)
-        {
-            CanvasGroup.alpha = 0f;
-            timer = 0;
-        }
-
-        if (timer > 1 && CanvasGroup.alpha == 0f)
-        {
-            CanvasGroup.alpha = 1f;
-            timer = 0;
-        }
+        if (timer < 1 ) return;
+        CanvasGroup.alpha = (CanvasGroup.alpha == 1f) ? 0f : 1f;
+        timer = 0;
     }
 
     private void ToggleMenu()
