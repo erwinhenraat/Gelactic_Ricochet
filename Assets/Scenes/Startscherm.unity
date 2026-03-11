@@ -669,10 +669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36666334c81595748a41b3fe7b2d6263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StartEnter
-  thisObject: {fileID: 446780131}
   levelMenu: {fileID: 440918983}
-  visib: 0
-  CanvasGroup: {fileID: 0}
 --- !u!114 &446780133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1160,7 +1157,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gelactic  Ricochet
+  m_text: Galactic  Ricochet
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: caabc9be49dcbb34ab9a5d4d379a1c95, type: 2}
   m_sharedMaterial: {fileID: 433719321404842576, guid: caabc9be49dcbb34ab9a5d4d379a1c95, type: 2}
