@@ -622,7 +622,7 @@ graph TD
 - **Functie**: Toont floating tekst feedback
 - **Twee typen**:
   - Score popup (klein, op bumper locatie)
-  - Berichten popup (groot, centraal - "Extra Life", "Game Over", etc.)
+  - Berichten popup (groot, centraal - "Extra Life", "Now using...", etc.)
 - **Logic**: Animatie met schaal van 1 tot 4-8x over tijd
 
 #### **ComboMood**
